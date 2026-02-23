@@ -1,44 +1,31 @@
 #!/usr/bin/env python3
 """
 Obsidian Vault Maintenance System
+A comprehensive CLI tool for maintaining and organizing Obsidian vaults.
 
-Comprehensive CLI tool for maintaining Obsidian vaults:
-- Orphan detection (files with no incoming links)  
-- Broken link detection and repair
-- Tag cleanup and normalization
-- Property/frontmatter standardization
-- File organization suggestions
-- Duplicate content detection
-- Health reports with actionable insights
-
-Usage:
-    vault-maintenance scan [--vault PATH] [--format json|markdown|terminal]
-    vault-maintenance fix [--vault PATH] [--dry-run] [--interactive]
-    vault-maintenance tags [--normalize] [--merge-similar]
-    vault-maintenance properties [--standardize] [--add-missing]
-    vault-maintenance report [--save-to FILE]
-    vault-maintenance organize [--suggest-only] [--by date|topic|type]
+Features:
+- Health checks and issue detection
+- Orphaned file identification  
+- Broken link detection and repair suggestions
+- Tag analysis and cleanup recommendations
+- Organization suggestions based on content patterns
+- Comprehensive reporting (terminal, markdown, JSON)
 """
 
-import argparse
-import json
 import os
 import re
 import sys
-from collections import defaultdict, Counter
-from datetime import datetime, date
+import json
+import argparse
+import datetime
 from pathlib import Path
-from typing import Dict, List, Set, Tuple, Optional, Any
+from collections import defaultdict, Counter
+from typing import Dict, List, Set, Tuple, Optional
 import difflib
 
-# Configuration
-DEFAULT_VAULT_PATH = Path.home() / "Wrap Buddies Vault"
-SUPPORTED_EXTENSIONS = {'.md', '.txt', '.canvas'}
-IGNORE_FOLDERS = {'.obsidian', '.trash', '.git', 'node_modules', '__pycache__'}
-DATE_FORMATS = ['%Y-%m-%d', '%Y%m%d', '%B %d, %Y', '%d %B %Y']
 
-# Color codes for terminal output
 class Colors:
+    """ANSI color codes for terminal output"""
     RED = '\033[91m'
     GREEN = '\033[92m'
     YELLOW = '\033[93m'
@@ -47,769 +34,761 @@ class Colors:
     CYAN = '\033[96m'
     WHITE = '\033[97m'
     BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-    END = '\033[0m'
+    RESET = '\033[0m'
+
 
 class VaultAnalyzer:
-    """Analyzes Obsidian vault structure and content."""
+    """Main vault analysis engine"""
     
     def __init__(self, vault_path: Path):
-        self.vault_path = vault_path
-        self.files: Dict[str, Dict] = {}
-        self.links: Dict[str, Set[str]] = defaultdict(set)
-        self.backlinks: Dict[str, Set[str]] = defaultdict(set)
-        self.tags: Dict[str, Set[str]] = defaultdict(set)
-        self.properties: Dict[str, Dict] = {}
+        self.vault_path = Path(vault_path).resolve()
+        self.files = {}  # filename -> full_path
+        self.content_cache = {}  # path -> content
+        self.links = defaultdict(set)  # file -> set of links it contains
+        self.backlinks = defaultdict(set)  # file -> set of files linking to it
+        self.tags = defaultdict(set)  # tag -> set of files containing it
+        self.frontmatter = {}  # file -> frontmatter dict
         
-    def scan_vault(self) -> Dict[str, Any]:
-        """Comprehensive vault scan returning analysis results."""
-        print(f"🔍 Scanning vault: {self.vault_path}")
+    def scan_vault(self) -> Dict:
+        """Comprehensive vault scan"""
+        print(f"{Colors.BLUE}🔍 Scanning vault: {self.vault_path}{Colors.RESET}")
         
-        # Collect all files
         self._collect_files()
+        self._analyze_content()
+        self._build_link_graph()
+        self._extract_tags()
+        self._parse_frontmatter()
         
-        # Analyze content
-        for file_path, file_info in self.files.items():
-            self._analyze_file(file_path, file_info)
-            
-        # Generate insights
-        results = {
-            'timestamp': datetime.now().isoformat(),
-            'vault_path': str(self.vault_path),
-            'summary': self._generate_summary(),
-            'orphans': self._find_orphans(),
-            'broken_links': self._find_broken_links(),
-            'tag_analysis': self._analyze_tags(),
-            'property_analysis': self._analyze_properties(),
-            'duplicates': self._find_duplicates(),
-            'organization_suggestions': self._suggest_organization()
-        }
+        stats = self._calculate_stats()
+        print(f"{Colors.GREEN}✓ Scan complete: {stats['total_files']} files, {stats['total_links']} links, {stats['unique_tags']} tags{Colors.RESET}")
         
-        return results
-        
+        return stats
+    
     def _collect_files(self):
-        """Collect all supported files in the vault."""
-        for root, dirs, files in os.walk(self.vault_path):
-            # Skip ignored folders
-            dirs[:] = [d for d in dirs if d not in IGNORE_FOLDERS]
-            
-            for file in files:
-                file_path = Path(root) / file
-                if file_path.suffix in SUPPORTED_EXTENSIONS:
-                    rel_path = str(file_path.relative_to(self.vault_path))
-                    
-                    self.files[rel_path] = {
-                        'name': file_path.stem,
-                        'full_path': file_path,
-                        'size': file_path.stat().st_size,
-                        'modified': datetime.fromtimestamp(file_path.stat().st_mtime),
-                        'extension': file_path.suffix
-                    }
-                    
-    def _analyze_file(self, rel_path: str, file_info: Dict):
-        """Analyze individual file for links, tags, and properties."""
-        try:
-            content = file_info['full_path'].read_text(encoding='utf-8')
-            file_info['content'] = content
-            file_info['word_count'] = len(content.split())
-            
-            # Extract frontmatter properties
-            properties = self._extract_frontmatter(content)
-            if properties:
-                self.properties[rel_path] = properties
+        """Collect all markdown files in the vault"""
+        for file_path in self.vault_path.rglob("*.md"):
+            if self._should_include_file(file_path):
+                key = file_path.stem
+                self.files[key] = file_path
                 
-            # Extract wikilinks [[link]]
-            wikilinks = re.findall(r'\[\[([^\]]+)\]\]', content)
-            for link in wikilinks:
-                # Handle link with alias [[link|alias]]
-                link_target = link.split('|')[0].strip()
-                self.links[rel_path].add(link_target)
-                self.backlinks[link_target].add(rel_path)
-                
-            # Extract markdown links [text](link)  
-            md_links = re.findall(r'\[([^\]]+)\]\(([^)]+)\)', content)
-            for text, link in md_links:
-                if not link.startswith('http'):  # Internal links only
-                    self.links[rel_path].add(link)
-                    self.backlinks[link].add(rel_path)
-                    
-            # Extract tags #tag
-            tags = re.findall(r'#([a-zA-Z0-9_/-]+)', content)
-            for tag in tags:
-                self.tags[tag].add(rel_path)
-                
-        except UnicodeDecodeError:
-            file_info['error'] = 'Cannot read file (encoding issue)'
-        except Exception as e:
-            file_info['error'] = str(e)
-            
-    def _extract_frontmatter(self, content: str) -> Optional[Dict]:
-        """Extract YAML frontmatter from file."""
-        if not content.startswith('---'):
-            return None
-            
-        try:
-            end_marker = content.find('\n---\n', 3)
-            if end_marker == -1:
-                return None
-                
-            frontmatter = content[3:end_marker]
-            
-            # Simple YAML parsing (basic key: value pairs)
-            properties = {}
-            for line in frontmatter.split('\n'):
-                if ':' in line:
-                    key, value = line.split(':', 1)
-                    properties[key.strip()] = value.strip()
-                    
-            return properties
-        except Exception:
-            return None
-            
-    def _generate_summary(self) -> Dict:
-        """Generate vault summary statistics."""
-        total_files = len(self.files)
-        total_size = sum(f.get('size', 0) for f in self.files.values())
-        total_words = sum(f.get('word_count', 0) for f in self.files.values())
+    def _should_include_file(self, file_path: Path) -> bool:
+        """Determine if a file should be included in analysis"""
+        # Skip common system/template files
+        skip_patterns = [
+            r'\.obsidian/',
+            r'templates?/',
+            r'\.git/',
+            r'node_modules/',
+            r'\.trash/',
+        ]
         
-        # File type distribution
-        extensions = Counter(f['extension'] for f in self.files.values())
+        path_str = str(file_path.relative_to(self.vault_path))
+        return not any(re.search(pattern, path_str, re.IGNORECASE) for pattern in skip_patterns)
+    
+    def _analyze_content(self):
+        """Read and cache file content"""
+        for filename, file_path in self.files.items():
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                self.content_cache[file_path] = content
+            except (UnicodeDecodeError, PermissionError) as e:
+                print(f"{Colors.YELLOW}⚠️  Cannot read {file_path}: {e}{Colors.RESET}")
+                self.content_cache[file_path] = ""
+    
+    def _build_link_graph(self):
+        """Extract internal links and build link graph"""
+        link_patterns = [
+            r'\[\[([^\]|]+)(?:\|[^\]]*)?\]\]',  # [[link]] or [[link|alias]]
+            r'\[([^\]]+)\]\(([^)]+\.md)\)',      # [text](file.md)
+        ]
         
-        # Recent activity (files modified in last 7 days)
-        week_ago = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-        recent_files = sum(1 for f in self.files.values() 
-                          if f.get('modified', datetime.min) >= week_ago)
+        for file_path, content in self.content_cache.items():
+            filename = file_path.stem
+            
+            for pattern in link_patterns:
+                matches = re.findall(pattern, content)
+                for match in matches:
+                    if isinstance(match, tuple):
+                        # Handle tuple matches from second pattern
+                        link_target = match[1].replace('.md', '') if match[1].endswith('.md') else match[0]
+                    else:
+                        # Handle string matches from first pattern
+                        link_target = match
+                    
+                    # Clean up link target
+                    link_target = link_target.split('#')[0]  # Remove anchors
+                    link_target = link_target.strip()
+                    
+                    if link_target:
+                        self.links[filename].add(link_target)
+                        self.backlinks[link_target].add(filename)
+    
+    def _extract_tags(self):
+        """Extract hashtags from content"""
+        tag_pattern = r'#([a-zA-Z0-9/_-]+)'
+        
+        for file_path, content in self.content_cache.items():
+            filename = file_path.stem
+            matches = re.findall(tag_pattern, content)
+            
+            for tag in matches:
+                # Skip common false positives
+                if not re.match(r'^(h[1-6]|[0-9]+)$', tag):
+                    self.tags[tag].add(filename)
+    
+    def _parse_frontmatter(self):
+        """Parse YAML frontmatter"""
+        frontmatter_pattern = r'^---\n(.*?)\n---'
+        
+        for file_path, content in self.content_cache.items():
+            filename = file_path.stem
+            match = re.match(frontmatter_pattern, content, re.DOTALL)
+            
+            if match:
+                # Simple YAML parsing (basic key: value pairs)
+                fm_content = match.group(1)
+                fm_dict = {}
+                
+                for line in fm_content.split('\n'):
+                    if ':' in line:
+                        key, value = line.split(':', 1)
+                        key = key.strip()
+                        value = value.strip().strip('"\'')
+                        fm_dict[key] = value
+                
+                self.frontmatter[filename] = fm_dict
+    
+    def _calculate_stats(self) -> Dict:
+        """Calculate vault statistics"""
+        total_size = sum(
+            file_path.stat().st_size 
+            for file_path in self.files.values()
+        )
+        
+        total_words = sum(
+            len(content.split()) 
+            for content in self.content_cache.values()
+        )
         
         return {
-            'total_files': total_files,
-            'total_size_mb': round(total_size / 1024 / 1024, 2),
+            'total_files': len(self.files),
+            'total_size_mb': round(total_size / (1024 * 1024), 2),
             'total_words': total_words,
-            'file_types': dict(extensions),
             'total_links': sum(len(links) for links in self.links.values()),
-            'total_tags': len(self.tags),
-            'files_with_properties': len(self.properties),
-            'recent_files_7d': recent_files
+            'unique_tags': len(self.tags),
+            'files_with_frontmatter': len(self.frontmatter),
         }
-        
-    def _find_orphans(self) -> List[Dict]:
-        """Find files with no incoming links."""
+    
+    def find_orphaned_files(self) -> List[str]:
+        """Find files with no incoming links"""
         orphans = []
         
-        for rel_path, file_info in self.files.items():
-            # Skip index files and daily notes (common orphans by design)
-            name = file_info['name'].lower()
-            if any(skip in name for skip in ['index', 'readme', 'home']):
-                continue
-                
-            # Check if any other file links to this one
-            has_backlinks = False
-            for link_target in [rel_path, file_info['name'], file_info['name'].replace(' ', '%20')]:
-                if link_target in self.backlinks and self.backlinks[link_target]:
-                    has_backlinks = True
-                    break
-                    
-            if not has_backlinks:
-                orphans.append({
-                    'path': rel_path,
-                    'name': file_info['name'],
-                    'size': file_info['size'],
-                    'modified': file_info['modified'].isoformat(),
-                    'word_count': file_info.get('word_count', 0)
-                })
-                
-        # Sort by modification date (newest first)
-        orphans.sort(key=lambda x: x['modified'], reverse=True)
-        return orphans
+        # Common files that shouldn't be considered orphaned
+        system_files = {'index', 'readme', 'home', 'start', 'dashboard', 'toc'}
         
-    def _find_broken_links(self) -> List[Dict]:
-        """Find links that point to non-existent files."""
+        for filename in self.files.keys():
+            if filename.lower() not in system_files and len(self.backlinks[filename]) == 0:
+                orphans.append(filename)
+        
+        return sorted(orphans)
+    
+    def find_broken_links(self) -> List[Tuple[str, str, str]]:
+        """Find links pointing to non-existent files"""
         broken = []
         
         for source_file, targets in self.links.items():
             for target in targets:
-                # Try to resolve the target
-                target_exists = False
-                
-                # Direct match
-                if target in self.files:
-                    target_exists = True
-                else:
-                    # Try with .md extension
-                    if f"{target}.md" in self.files:
-                        target_exists = True
-                    else:
-                        # Try fuzzy matching by name
-                        for file_path, file_info in self.files.items():
-                            if file_info['name'] == target or file_info['name'] == target.replace('%20', ' '):
-                                target_exists = True
-                                break
-                                
-                if not target_exists:
-                    broken.append({
-                        'source': source_file,
-                        'target': target,
-                        'suggestions': self._suggest_link_fixes(target)
-                    })
-                    
-        return broken
+                if target not in self.files:
+                    # Try to find similar files for suggestions
+                    suggestions = difflib.get_close_matches(
+                        target, 
+                        self.files.keys(), 
+                        n=3, 
+                        cutoff=0.6
+                    )
+                    suggestion = suggestions[0] if suggestions else "No suggestions"
+                    broken.append((source_file, target, suggestion))
         
-    def _suggest_link_fixes(self, broken_target: str) -> List[str]:
-        """Suggest possible fixes for broken links."""
-        suggestions = []
-        
-        # Get all file names for fuzzy matching
-        file_names = [info['name'] for info in self.files.values()]
-        
-        # Find close matches
-        matches = difflib.get_close_matches(broken_target, file_names, n=3, cutoff=0.6)
-        suggestions.extend(matches)
-        
-        # Try case-insensitive matching
-        lower_target = broken_target.lower()
-        for name in file_names:
-            if name.lower() == lower_target and name not in suggestions:
-                suggestions.append(name)
-                
-        return suggestions
-        
-    def _analyze_tags(self) -> Dict:
-        """Analyze tag usage and suggest improvements."""
-        tag_stats = {}
-        
-        for tag, files in self.tags.items():
-            tag_stats[tag] = {
-                'count': len(files),
-                'files': list(files)
-            }
-            
-        # Find similar tags that could be merged
-        similar_pairs = []
-        tag_list = list(self.tags.keys())
-        for i, tag1 in enumerate(tag_list):
-            for tag2 in tag_list[i+1:]:
-                similarity = difflib.SequenceMatcher(None, tag1.lower(), tag2.lower()).ratio()
-                if similarity > 0.8:  # 80% similarity
-                    similar_pairs.append((tag1, tag2, similarity))
-                    
-        # Sort by frequency (most used first)
-        sorted_tags = sorted(tag_stats.items(), key=lambda x: x[1]['count'], reverse=True)
-        
-        return {
-            'total_tags': len(self.tags),
-            'tag_usage': dict(sorted_tags[:20]),  # Top 20 tags
-            'similar_tags': similar_pairs,
-            'rare_tags': [tag for tag, info in tag_stats.items() if info['count'] == 1],
-            'tag_hierarchy': self._analyze_tag_hierarchy()
-        }
-        
-    def _analyze_tag_hierarchy(self) -> Dict:
-        """Analyze tag hierarchy (tags with slashes)."""
-        hierarchy = defaultdict(list)
-        
-        for tag in self.tags.keys():
-            if '/' in tag:
-                parts = tag.split('/')
-                parent = parts[0]
-                hierarchy[parent].append(tag)
-                
-        return dict(hierarchy)
-        
-    def _analyze_properties(self) -> Dict:
-        """Analyze frontmatter properties."""
-        if not self.properties:
-            return {'total_files_with_properties': 0}
-            
-        # Property usage stats
-        property_counts = defaultdict(int)
-        property_values = defaultdict(set)
-        
-        for file_path, props in self.properties.items():
-            for key, value in props.items():
-                property_counts[key] += 1
-                property_values[key].add(value)
-                
-        # Common properties
-        common_props = dict(sorted(property_counts.items(), 
-                                 key=lambda x: x[1], reverse=True))
-        
-        # Inconsistent property names (similar but different)
-        similar_properties = []
-        prop_list = list(property_counts.keys())
-        for i, prop1 in enumerate(prop_list):
-            for prop2 in prop_list[i+1:]:
-                similarity = difflib.SequenceMatcher(None, prop1.lower(), prop2.lower()).ratio()
-                if similarity > 0.8:
-                    similar_properties.append((prop1, prop2, similarity))
-                    
-        return {
-            'total_files_with_properties': len(self.properties),
-            'property_usage': common_props,
-            'property_values': {k: list(v) for k, v in property_values.items()},
-            'similar_properties': similar_properties,
-            'files_missing_common_properties': self._find_missing_properties()
-        }
-        
-    def _find_missing_properties(self) -> List[Dict]:
-        """Find files missing common properties."""
-        # Define common properties that should be on most files
-        common_props = ['tags', 'created', 'modified', 'type']
-        missing = []
-        
-        for file_path, file_info in self.files.items():
-            props = self.properties.get(file_path, {})
-            missing_props = [prop for prop in common_props if prop not in props]
-            
-            if missing_props:
-                missing.append({
-                    'file': file_path,
-                    'missing': missing_props
-                })
-                
-        return missing
-        
-    def _find_duplicates(self) -> List[Dict]:
-        """Find potential duplicate content."""
-        # Group by similar titles
-        title_groups = defaultdict(list)
-        
-        for file_path, file_info in self.files.items():
-            # Normalize title for comparison
-            normalized = re.sub(r'[^a-zA-Z0-9]', '', file_info['name'].lower())
-            title_groups[normalized].append({
-                'path': file_path,
-                'name': file_info['name'],
-                'size': file_info['size'],
-                'modified': file_info['modified'].isoformat()
-            })
-            
-        # Find groups with multiple files
-        duplicates = []
-        for normalized, files in title_groups.items():
-            if len(files) > 1:
-                duplicates.append({
-                    'normalized_title': normalized,
-                    'files': files,
-                    'count': len(files)
-                })
-                
-        return sorted(duplicates, key=lambda x: x['count'], reverse=True)
-        
-    def _suggest_organization(self) -> Dict:
-        """Suggest file organization improvements."""
-        suggestions = {
-            'by_date': [],
-            'by_topic': [],
-            'by_type': [],
-            'flat_structure_warning': []
-        }
-        
-        # Analyze current structure
-        depth_distribution = defaultdict(int)
-        for file_path in self.files.keys():
-            depth = len(Path(file_path).parts) - 1  # Subtract 1 for the file itself
-            depth_distribution[depth] += 1
-            
-        # If too many files are in root, suggest organization
-        root_files = depth_distribution.get(0, 0)
-        if root_files > 10:
-            suggestions['flat_structure_warning'] = {
-                'files_in_root': root_files,
-                'recommendation': 'Consider organizing files into folders'
-            }
-            
-        # Suggest date-based organization for daily notes
-        for file_path, file_info in self.files.items():
-            if self._looks_like_date(file_info['name']):
-                suggestions['by_date'].append(file_path)
-                
-        # Suggest topic-based organization by tag frequency
-        tag_file_mapping = {}
-        for tag, files in self.tags.items():
-            if len(files) >= 3:  # Tags with 3+ files could be folders
-                tag_file_mapping[tag] = list(files)
-                
-        suggestions['by_topic'] = tag_file_mapping
-        
-        return suggestions
-        
-    def _looks_like_date(self, filename: str) -> bool:
-        """Check if filename looks like a date."""
-        for date_format in DATE_FORMATS:
-            try:
-                datetime.strptime(filename, date_format)
-                return True
-            except ValueError:
-                continue
-        return bool(re.match(r'\d{4}-\d{2}-\d{2}', filename))
-
-class VaultMaintenanceCLI:
-    """CLI interface for vault maintenance operations."""
+        return sorted(broken)
     
-    def __init__(self):
-        self.analyzer = None
+    def analyze_tags(self) -> Dict:
+        """Analyze tag usage patterns"""
+        tag_counts = {tag: len(files) for tag, files in self.tags.items()}
         
-    def main(self):
-        """Main CLI entry point."""
-        parser = argparse.ArgumentParser(
-            description="Obsidian Vault Maintenance System",
-            formatter_class=argparse.RawDescriptionHelpFormatter,
-            epilog=__doc__
-        )
+        # Find similar tags that might be duplicates
+        similar_tags = []
+        tag_list = list(self.tags.keys())
         
-        parser.add_argument('--vault', type=Path, default=DEFAULT_VAULT_PATH,
-                          help=f'Vault path (default: {DEFAULT_VAULT_PATH})')
+        for i, tag1 in enumerate(tag_list):
+            for j, tag2 in enumerate(tag_list[i+1:], i+1):
+                similarity = difflib.SequenceMatcher(None, tag1, tag2).ratio()
+                if similarity > 0.8 and similarity < 1.0:
+                    similar_tags.append((tag1, tag2, similarity))
         
-        subparsers = parser.add_subparsers(dest='command', help='Available commands')
+        return {
+            'tag_counts': sorted(tag_counts.items(), key=lambda x: x[1], reverse=True),
+            'rare_tags': [(tag, count) for tag, count in tag_counts.items() if count == 1],
+            'popular_tags': [(tag, count) for tag, count in tag_counts.items() if count >= 5],
+            'similar_tags': sorted(similar_tags, key=lambda x: x[2], reverse=True),
+        }
+    
+    def suggest_organization(self) -> Dict:
+        """Suggest organizational improvements"""
+        suggestions = {
+            'date_based': self._find_date_based_files(),
+            'topic_clusters': self._find_topic_clusters(), 
+            'flat_structure': self._find_flat_structure_issues(),
+        }
         
-        # Scan command
-        scan_parser = subparsers.add_parser('scan', help='Scan vault and analyze structure')
-        scan_parser.add_argument('--format', choices=['json', 'markdown', 'terminal'], 
-                               default='terminal', help='Output format')
-        scan_parser.add_argument('--save-to', type=Path, help='Save report to file')
+        return suggestions
+    
+    def _find_date_based_files(self) -> List[str]:
+        """Find files that might benefit from date-based organization"""
+        date_pattern = r'\d{4}-\d{2}-\d{2}'
+        date_files = []
         
-        # Fix command
-        fix_parser = subparsers.add_parser('fix', help='Fix detected issues')
-        fix_parser.add_argument('--dry-run', action='store_true', 
-                              help='Show what would be fixed without making changes')
-        fix_parser.add_argument('--interactive', action='store_true',
-                              help='Ask for confirmation before each fix')
+        for filename in self.files.keys():
+            if re.search(date_pattern, filename):
+                date_files.append(filename)
         
-        # Tags command  
-        tags_parser = subparsers.add_parser('tags', help='Tag management')
-        tags_parser.add_argument('--normalize', action='store_true',
-                               help='Normalize tag formatting')
-        tags_parser.add_argument('--merge-similar', action='store_true',
-                               help='Merge similar tags')
+        return sorted(date_files)
+    
+    def _find_topic_clusters(self) -> List[Tuple[str, List[str]]]:
+        """Find potential topic-based clusters using tags"""
+        clusters = []
         
-        # Properties command
-        props_parser = subparsers.add_parser('properties', help='Property management')
-        props_parser.add_argument('--standardize', action='store_true',
-                                help='Standardize property names')
-        props_parser.add_argument('--add-missing', action='store_true',
-                                help='Add missing common properties')
+        for tag, files in self.tags.items():
+            if len(files) >= 3:  # Clusters with at least 3 files
+                clusters.append((tag, sorted(list(files))))
         
-        # Report command
-        report_parser = subparsers.add_parser('report', help='Generate maintenance report')
-        report_parser.add_argument('--save-to', type=Path, help='Save report to file')
+        return sorted(clusters, key=lambda x: len(x[1]), reverse=True)
+    
+    def _find_flat_structure_issues(self) -> List[str]:
+        """Find files in root that might benefit from folders"""
+        root_files = []
         
-        # Organize command
-        organize_parser = subparsers.add_parser('organize', help='File organization')
-        organize_parser.add_argument('--suggest-only', action='store_true',
-                                   help='Only suggest organization, don\'t move files')
-        organize_parser.add_argument('--by', choices=['date', 'topic', 'type'],
-                                   help='Organization strategy')
+        for filename, file_path in self.files.items():
+            # Check if file is directly in vault root (not in a subfolder)
+            if len(file_path.relative_to(self.vault_path).parts) == 1:
+                root_files.append(filename)
         
-        args = parser.parse_args()
+        return sorted(root_files)
+
+
+class ReportGenerator:
+    """Generate reports in different formats"""
+    
+    def __init__(self, analyzer: VaultAnalyzer):
+        self.analyzer = analyzer
+    
+    def generate_terminal_report(self, analysis_results: Dict):
+        """Generate colored terminal report"""
+        print(f"\n{Colors.BOLD}📊 VAULT HEALTH REPORT{Colors.RESET}")
+        print("=" * 50)
         
-        if not args.command:
-            parser.print_help()
-            return
-            
-        # Initialize analyzer
-        if not args.vault.exists():
-            print(f"{Colors.RED}Error: Vault path does not exist: {args.vault}{Colors.END}")
-            sys.exit(1)
-            
-        self.analyzer = VaultAnalyzer(args.vault)
+        # Statistics
+        stats = analysis_results['stats']
+        print(f"\n{Colors.CYAN}📈 Statistics:{Colors.RESET}")
+        print(f"  Files: {stats['total_files']}")
+        print(f"  Size: {stats['total_size_mb']} MB")
+        print(f"  Words: {stats['total_words']:,}")
+        print(f"  Links: {stats['total_links']}")
+        print(f"  Tags: {stats['unique_tags']}")
+        print(f"  Frontmatter: {stats['files_with_frontmatter']} files")
         
-        # Execute command
-        try:
-            if args.command == 'scan':
-                self.cmd_scan(args)
-            elif args.command == 'fix':
-                self.cmd_fix(args)
-            elif args.command == 'tags':
-                self.cmd_tags(args)
-            elif args.command == 'properties':
-                self.cmd_properties(args)
-            elif args.command == 'report':
-                self.cmd_report(args)
-            elif args.command == 'organize':
-                self.cmd_organize(args)
-        except KeyboardInterrupt:
-            print(f"\n{Colors.YELLOW}Operation cancelled by user{Colors.END}")
-            sys.exit(1)
-        except Exception as e:
-            print(f"{Colors.RED}Error: {e}{Colors.END}")
-            sys.exit(1)
-            
-    def cmd_scan(self, args):
-        """Scan vault command."""
-        results = self.analyzer.scan_vault()
-        
-        if args.format == 'json':
-            output = json.dumps(results, indent=2, default=str)
-        elif args.format == 'markdown':
-            output = self._format_markdown_report(results)
+        # Orphaned files
+        orphans = analysis_results['orphans']
+        print(f"\n{Colors.YELLOW}🏝️  Orphaned Files ({len(orphans)}):{Colors.RESET}")
+        if orphans:
+            for orphan in orphans[:10]:  # Show first 10
+                print(f"  • {orphan}")
+            if len(orphans) > 10:
+                print(f"  ... and {len(orphans) - 10} more")
         else:
-            output = self._format_terminal_report(results)
-            
-        if args.save_to:
-            args.save_to.write_text(output)
-            print(f"{Colors.GREEN}Report saved to {args.save_to}{Colors.END}")
+            print("  ✓ No orphaned files found!")
+        
+        # Broken links
+        broken = analysis_results['broken_links']
+        print(f"\n{Colors.RED}🔗 Broken Links ({len(broken)}):{Colors.RESET}")
+        if broken:
+            for source, target, suggestion in broken[:10]:  # Show first 10
+                print(f"  • {source} → {target}")
+                if suggestion != "No suggestions":
+                    print(f"    💡 Try: {suggestion}")
+            if len(broken) > 10:
+                print(f"  ... and {len(broken) - 10} more")
         else:
-            print(output)
+            print("  ✓ No broken links found!")
+        
+        # Tag analysis
+        tag_analysis = analysis_results['tag_analysis']
+        print(f"\n{Colors.MAGENTA}🏷️  Tag Analysis:{Colors.RESET}")
+        print(f"  Popular tags: {len(tag_analysis['popular_tags'])}")
+        print(f"  Rare tags: {len(tag_analysis['rare_tags'])}")
+        print(f"  Similar tags: {len(tag_analysis['similar_tags'])}")
+        
+        if tag_analysis['similar_tags']:
+            print(f"\n{Colors.YELLOW}  🔄 Similar tags (potential duplicates):{Colors.RESET}")
+            for tag1, tag2, similarity in tag_analysis['similar_tags'][:5]:
+                print(f"    • {tag1} ≈ {tag2} ({similarity:.1%})")
+    
+    def generate_markdown_report(self, analysis_results: Dict) -> str:
+        """Generate markdown report"""
+        report = []
+        report.append("# Obsidian Vault Health Report")
+        report.append(f"Generated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        report.append("")
+        
+        # Statistics
+        stats = analysis_results['stats']
+        report.append("## 📈 Statistics")
+        report.append("")
+        report.append(f"- **Files:** {stats['total_files']}")
+        report.append(f"- **Size:** {stats['total_size_mb']} MB")
+        report.append(f"- **Words:** {stats['total_words']:,}")
+        report.append(f"- **Internal Links:** {stats['total_links']}")
+        report.append(f"- **Unique Tags:** {stats['unique_tags']}")
+        report.append(f"- **Files with Properties:** {stats['files_with_frontmatter']}")
+        report.append("")
+        
+        # Issues
+        orphans = analysis_results['orphans']
+        report.append(f"## 🏝️ Orphaned Files ({len(orphans)})")
+        report.append("")
+        if orphans:
+            report.append("Files with no incoming links:")
+            report.append("")
+            for orphan in orphans:
+                report.append(f"- {orphan}")
+        else:
+            report.append("✅ No orphaned files found!")
+        report.append("")
+        
+        # Broken links
+        broken = analysis_results['broken_links']
+        report.append(f"## 🔗 Broken Links ({len(broken)})")
+        report.append("")
+        if broken:
+            report.append("Links pointing to non-existent files:")
+            report.append("")
+            for source, target, suggestion in broken:
+                report.append(f"- **{source}** → `{target}`")
+                if suggestion != "No suggestions":
+                    report.append(f"  - 💡 Suggestion: `{suggestion}`")
+        else:
+            report.append("✅ No broken links found!")
+        report.append("")
+        
+        # Tags
+        tag_analysis = analysis_results['tag_analysis']
+        report.append("## 🏷️ Tag Analysis")
+        report.append("")
+        
+        if tag_analysis['popular_tags']:
+            report.append("### Popular Tags (5+ uses)")
+            report.append("")
+            for tag, count in tag_analysis['popular_tags'][:10]:
+                report.append(f"- #{tag} ({count} files)")
+            report.append("")
+        
+        if tag_analysis['similar_tags']:
+            report.append("### Similar Tags (Potential Duplicates)")
+            report.append("")
+            for tag1, tag2, similarity in tag_analysis['similar_tags']:
+                report.append(f"- #{tag1} ≈ #{tag2} ({similarity:.1%})")
+            report.append("")
+        
+        return "\n".join(report)
+    
+    def generate_json_report(self, analysis_results: Dict) -> str:
+        """Generate JSON report for programmatic use"""
+        # Convert sets to lists for JSON serialization
+        json_safe = {}
+        for key, value in analysis_results.items():
+            if isinstance(value, dict):
+                json_safe[key] = {k: list(v) if isinstance(v, set) else v for k, v in value.items()}
+            elif isinstance(value, list):
+                json_safe[key] = value
+            else:
+                json_safe[key] = value
+        
+        json_safe['generated_at'] = datetime.datetime.now().isoformat()
+        
+        return json.dumps(json_safe, indent=2, ensure_ascii=False)
+
+
+class MaintenanceActions:
+    """Handles maintenance actions like fixing links and organizing files"""
+    
+    def __init__(self, analyzer: VaultAnalyzer):
+        self.analyzer = analyzer
+    
+    def fix_broken_links(self, interactive=True, dry_run=False) -> int:
+        """Fix broken links with user confirmation"""
+        broken_links = self.analyzer.find_broken_links()
+        
+        if not broken_links:
+            print(f"{Colors.GREEN}✓ No broken links found!{Colors.RESET}")
+            return 0
+        
+        print(f"\n{Colors.YELLOW}🔧 Found {len(broken_links)} broken links{Colors.RESET}")
+        
+        fixed_count = 0
+        for source_file, broken_target, suggestion in broken_links:
+            source_path = self.analyzer.files[source_file]
             
-    def cmd_fix(self, args):
-        """Fix issues command."""
-        results = self.analyzer.scan_vault()
-        fixes_applied = 0
-        
-        print(f"{Colors.BLUE}🔧 Starting vault fixes...{Colors.END}")
-        
-        # Fix broken links
-        if results['broken_links']:
-            print(f"\n{Colors.YELLOW}📎 Fixing broken links...{Colors.END}")
-            for link in results['broken_links']:
-                if link['suggestions']:
-                    suggested_fix = link['suggestions'][0]
+            print(f"\n{Colors.CYAN}📝 {source_file}{Colors.RESET}")
+            print(f"  Broken link: [[{broken_target}]]")
+            
+            if suggestion != "No suggestions":
+                print(f"  {Colors.GREEN}💡 Suggestion: [[{suggestion}]]{Colors.RESET}")
+                
+                if interactive:
+                    choice = input("  Apply fix? (y/n/s=skip all): ").lower().strip()
+                    if choice == 's':
+                        break
+                    elif choice != 'y':
+                        continue
+                
+                if not dry_run:
+                    # Read file content
+                    content = self.analyzer.content_cache[source_path]
                     
-                    if args.interactive:
-                        response = input(f"Replace '{link['target']}' with '{suggested_fix}' in {link['source']}? (y/n): ")
-                        if response.lower() != 'y':
+                    # Replace the broken link
+                    old_link = f"[[{broken_target}]]"
+                    new_link = f"[[{suggestion}]]"
+                    updated_content = content.replace(old_link, new_link)
+                    
+                    # Write back to file
+                    try:
+                        with open(source_path, 'w', encoding='utf-8') as f:
+                            f.write(updated_content)
+                        print(f"  {Colors.GREEN}✓ Fixed: {old_link} → {new_link}{Colors.RESET}")
+                        fixed_count += 1
+                    except Exception as e:
+                        print(f"  {Colors.RED}❌ Failed to fix: {e}{Colors.RESET}")
+                else:
+                    print(f"  {Colors.BLUE}🔍 Would fix: [[{broken_target}]] → [[{suggestion}]]{Colors.RESET}")
+                    fixed_count += 1
+            else:
+                print(f"  {Colors.RED}❌ No suggestions available{Colors.RESET}")
+        
+        if dry_run:
+            print(f"\n{Colors.BLUE}🔍 Dry run: Would fix {fixed_count} links{Colors.RESET}")
+        else:
+            print(f"\n{Colors.GREEN}✓ Fixed {fixed_count} broken links{Colors.RESET}")
+        
+        return fixed_count
+    
+    def merge_similar_tags(self, threshold=0.8, interactive=True, dry_run=False) -> int:
+        """Merge similar tags"""
+        tag_analysis = self.analyzer.analyze_tags()
+        similar_tags = [
+            (tag1, tag2, sim) for tag1, tag2, sim in tag_analysis['similar_tags']
+            if sim >= threshold
+        ]
+        
+        if not similar_tags:
+            print(f"{Colors.GREEN}✓ No similar tags found (threshold: {threshold}){Colors.RESET}")
+            return 0
+        
+        print(f"\n{Colors.YELLOW}🏷️  Found {len(similar_tags)} similar tag pairs{Colors.RESET}")
+        
+        merged_count = 0
+        for tag1, tag2, similarity in similar_tags:
+            files1 = self.analyzer.tags[tag1]
+            files2 = self.analyzer.tags[tag2]
+            
+            print(f"\n{Colors.CYAN}Tags: #{tag1} ({len(files1)} files) ≈ #{tag2} ({len(files2)} files) [{similarity:.1%}]{Colors.RESET}")
+            
+            if interactive:
+                print(f"  Which tag to keep?")
+                print(f"  1. #{tag1}")
+                print(f"  2. #{tag2}")
+                choice = input("  Choice (1/2/s=skip): ").strip()
+                
+                if choice == 's':
+                    continue
+                elif choice == '1':
+                    keep_tag, merge_tag = tag1, tag2
+                elif choice == '2':
+                    keep_tag, merge_tag = tag2, tag1
+                else:
+                    continue
+            else:
+                # Auto-choose the more popular tag
+                keep_tag, merge_tag = (tag1, tag2) if len(files1) >= len(files2) else (tag2, tag1)
+            
+            if not dry_run:
+                # Replace the tag in all files
+                merge_files = self.analyzer.tags[merge_tag]
+                for filename in merge_files:
+                    file_path = self.analyzer.files[filename]
+                    content = self.analyzer.content_cache[file_path]
+                    
+                    # Replace #merge_tag with #keep_tag
+                    updated_content = re.sub(
+                        rf'#\b{re.escape(merge_tag)}\b',
+                        f'#{keep_tag}',
+                        content
+                    )
+                    
+                    if updated_content != content:
+                        try:
+                            with open(file_path, 'w', encoding='utf-8') as f:
+                                f.write(updated_content)
+                        except Exception as e:
+                            print(f"  {Colors.RED}❌ Failed to update {filename}: {e}{Colors.RESET}")
                             continue
-                            
-                    if not args.dry_run:
-                        self._apply_link_fix(link['source'], link['target'], suggested_fix)
-                        fixes_applied += 1
-                        print(f"  ✓ Fixed: {link['source']} -> {suggested_fix}")
-                    else:
-                        print(f"  Would fix: {link['source']} -> {suggested_fix}")
-                        
-        print(f"\n{Colors.GREEN}✅ Fixes completed: {fixes_applied}{Colors.END}")
-        
-    def cmd_tags(self, args):
-        """Tag management command.""" 
-        results = self.analyzer.scan_vault()
-        tag_analysis = results['tag_analysis']
-        
-        if args.normalize:
-            print(f"{Colors.BLUE}🏷️  Normalizing tags...{Colors.END}")
-            # Implementation for tag normalization
-            
-        if args.merge_similar:
-            print(f"{Colors.BLUE}🔗 Merging similar tags...{Colors.END}")
-            for tag1, tag2, similarity in tag_analysis.get('similar_tags', []):
-                print(f"  Found similar: '{tag1}' and '{tag2}' ({similarity:.2%})")
                 
-    def cmd_properties(self, args):
-        """Property management command."""
-        results = self.analyzer.scan_vault()
+                print(f"  {Colors.GREEN}✓ Merged #{merge_tag} → #{keep_tag}{Colors.RESET}")
+                merged_count += 1
+            else:
+                print(f"  {Colors.BLUE}🔍 Would merge #{merge_tag} → #{keep_tag}{Colors.RESET}")
+                merged_count += 1
         
-        if args.standardize:
-            print(f"{Colors.BLUE}📋 Standardizing properties...{Colors.END}")
-            # Implementation for property standardization
-            
-        if args.add_missing:
-            print(f"{Colors.BLUE}➕ Adding missing properties...{Colors.END}")
-            # Implementation for adding missing properties
-            
-    def cmd_report(self, args):
-        """Generate maintenance report."""
-        results = self.analyzer.scan_vault()
-        report = self._format_markdown_report(results)
-        
-        if args.save_to:
-            args.save_to.write_text(report)
-            print(f"{Colors.GREEN}Report saved to {args.save_to}{Colors.END}")
+        if dry_run:
+            print(f"\n{Colors.BLUE}🔍 Dry run: Would merge {merged_count} tag pairs{Colors.RESET}")
         else:
-            print(report)
-            
-    def cmd_organize(self, args):
-        """File organization command."""
-        results = self.analyzer.scan_vault()
-        suggestions = results['organization_suggestions']
+            print(f"\n{Colors.GREEN}✓ Merged {merged_count} similar tags{Colors.RESET}")
         
-        if args.suggest_only or not args.by:
-            print(f"{Colors.BLUE}📁 Organization suggestions:{Colors.END}\n")
+        return merged_count
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Obsidian Vault Maintenance System")
+    parser.add_argument('--vault', '-v', default='.', help='Path to Obsidian vault (default: current directory)')
+    
+    # Subcommands
+    subparsers = parser.add_subparsers(dest='command', help='Available commands')
+    
+    # Scan command (default)
+    scan_parser = subparsers.add_parser('scan', help='Analyze vault health (default)')
+    scan_parser.add_argument('--format', choices=['terminal', 'markdown', 'json'], default='terminal', help='Report format')
+    scan_parser.add_argument('--output', '-o', help='Output file (default: stdout)')
+    scan_parser.add_argument('--focus', choices=['orphans', 'links', 'tags'], help='Focus on specific issues')
+    
+    # Fix command
+    fix_parser = subparsers.add_parser('fix', help='Fix issues interactively')
+    fix_parser.add_argument('--interactive', action='store_true', default=True, help='Confirm each fix')
+    fix_parser.add_argument('--dry-run', action='store_true', help='Show what would be done')
+    fix_parser.add_argument('--links', action='store_true', help='Fix broken links only')
+    
+    # Tags command
+    tags_parser = subparsers.add_parser('tags', help='Tag management operations')
+    tags_parser.add_argument('--merge-similar', action='store_true', help='Merge similar tags')
+    tags_parser.add_argument('--threshold', type=float, default=0.8, help='Similarity threshold for merging')
+    tags_parser.add_argument('--dry-run', action='store_true', help='Show what would be done')
+    
+    # Properties command
+    props_parser = subparsers.add_parser('properties', help='Frontmatter property operations')
+    props_parser.add_argument('--standardize', action='store_true', help='Standardize property names')
+    props_parser.add_argument('--dry-run', action='store_true', help='Show what would be done')
+    
+    # Organize command
+    org_parser = subparsers.add_parser('organize', help='File organization suggestions')
+    org_parser.add_argument('--by', choices=['date', 'topic'], help='Organization method')
+    org_parser.add_argument('--dry-run', action='store_true', help='Show what would be done')
+    
+    # Report command
+    report_parser = subparsers.add_parser('report', help='Generate detailed reports')
+    report_parser.add_argument('--format', choices=['terminal', 'markdown', 'json'], default='terminal')
+    report_parser.add_argument('--output', '-o', help='Output file')
+    report_parser.add_argument('--save-to', help='Save report to specific file')
+    
+    args = parser.parse_args()
+    
+    # Default to scan if no command specified
+    if not args.command:
+        args.command = 'scan'
+        args.format = 'terminal'
+        args.output = None
+        args.focus = None
+    
+    args = parser.parse_args()
+    
+    # Default to scan if no command specified
+    if not args.command:
+        args.command = 'scan'
+        if not hasattr(args, 'format'):
+            args.format = 'terminal'
+        if not hasattr(args, 'output'):
+            args.output = None
+        if not hasattr(args, 'focus'):
+            args.focus = None
+    
+    # Validate vault path
+    vault_path = Path(args.vault).resolve()
+    if not vault_path.exists():
+        print(f"{Colors.RED}❌ Vault path does not exist: {vault_path}{Colors.RESET}")
+        sys.exit(1)
+    
+    if not vault_path.is_dir():
+        print(f"{Colors.RED}❌ Vault path is not a directory: {vault_path}{Colors.RESET}")
+        sys.exit(1)
+    
+    try:
+        # Initialize analyzer
+        analyzer = VaultAnalyzer(vault_path)
+        
+        # Initialize maintenance actions
+        maintenance = MaintenanceActions(analyzer)
+        
+        # Perform analysis for most commands
+        if args.command in ['scan', 'fix', 'tags', 'report', 'organize']:
+            print(f"{Colors.BLUE}🚀 Starting vault analysis...{Colors.RESET}")
+            stats = analyzer.scan_vault()
             
-            if suggestions['flat_structure_warning']:
-                warning = suggestions['flat_structure_warning']
-                print(f"{Colors.YELLOW}⚠️  {warning['files_in_root']} files in root - {warning['recommendation']}{Colors.END}\n")
+            # Gather analysis results
+            analysis_results = {
+                'stats': stats,
+                'orphans': analyzer.find_orphaned_files(),
+                'broken_links': analyzer.find_broken_links(),
+                'tag_analysis': analyzer.analyze_tags(),
+                'organization_suggestions': analyzer.suggest_organization(),
+            }
+        
+        # Handle different commands
+        if args.command == 'scan' or args.command == 'report':
+            # Generate report
+            reporter = ReportGenerator(analyzer)
+            
+            format_type = args.format if hasattr(args, 'format') else 'terminal'
+            output_file = args.output if hasattr(args, 'output') else None
+            
+            if hasattr(args, 'save_to') and args.save_to:
+                output_file = args.save_to
+            
+            if format_type == 'terminal':
+                reporter.generate_terminal_report(analysis_results)
+            elif format_type == 'markdown':
+                content = reporter.generate_markdown_report(analysis_results)
+                if output_file:
+                    with open(output_file, 'w', encoding='utf-8') as f:
+                        f.write(content)
+                    print(f"{Colors.GREEN}✓ Report saved to: {output_file}{Colors.RESET}")
+                else:
+                    print(content)
+            elif format_type == 'json':
+                content = reporter.generate_json_report(analysis_results)
+                if output_file:
+                    with open(output_file, 'w', encoding='utf-8') as f:
+                        f.write(content)
+                    print(f"{Colors.GREEN}✓ Report saved to: {output_file}{Colors.RESET}")
+                else:
+                    print(content)
+            
+            # Summary for scan command
+            if args.command == 'scan':
+                total_issues = len(analysis_results['orphans']) + len(analysis_results['broken_links'])
+                if total_issues > 0:
+                    print(f"\n{Colors.YELLOW}⚠️  Found {total_issues} issues that could use attention{Colors.RESET}")
+                    print(f"{Colors.CYAN}💡 Use 'vault-maintenance fix' to repair broken links{Colors.RESET}")
+                    print(f"{Colors.CYAN}💡 Use 'vault-maintenance tags --merge-similar' for tag cleanup{Colors.RESET}")
+                else:
+                    print(f"\n{Colors.GREEN}🎉 Vault looks healthy! No major issues found{Colors.RESET}")
+        
+        elif args.command == 'fix':
+            dry_run = getattr(args, 'dry_run', False)
+            interactive = getattr(args, 'interactive', True)
+            
+            if getattr(args, 'links', False) or not any([getattr(args, 'links', False)]):
+                # Fix broken links (default fix action)
+                fixed_count = maintenance.fix_broken_links(interactive=interactive, dry_run=dry_run)
                 
-            if suggestions['by_date']:
-                print(f"{Colors.CYAN}📅 Date-based files (could go in Journal/ folder):{Colors.END}")
-                for file_path in suggestions['by_date'][:10]:  # Show first 10
-                    print(f"  • {file_path}")
-                if len(suggestions['by_date']) > 10:
-                    print(f"  ... and {len(suggestions['by_date']) - 10} more")
-                print()
+                if fixed_count == 0 and not dry_run:
+                    print(f"{Colors.GREEN}🎉 No broken links found to fix!{Colors.RESET}")
+        
+        elif args.command == 'tags':
+            if getattr(args, 'merge_similar', False):
+                threshold = getattr(args, 'threshold', 0.8)
+                dry_run = getattr(args, 'dry_run', False)
                 
-            if suggestions['by_topic']:
-                print(f"{Colors.CYAN}🏷️  Topic-based organization by tags:{Colors.END}")
-                for tag, files in list(suggestions['by_topic'].items())[:5]:
-                    print(f"  #{tag} ({len(files)} files)")
-                    for file_path in files[:3]:
-                        print(f"    • {file_path}")
-                    if len(files) > 3:
-                        print(f"    ... and {len(files) - 3} more")
-                print()
-        else:
-            print(f"{Colors.BLUE}📁 Organizing files by {args.by}...{Colors.END}")
-            # Implementation for actual file moving
-            
-    def _format_terminal_report(self, results: Dict) -> str:
-        """Format results for terminal display."""
-        output = []
-        summary = results['summary']
-        
-        # Header
-        output.append(f"{Colors.BOLD}{Colors.BLUE}📊 Obsidian Vault Health Report{Colors.END}")
-        output.append(f"{Colors.CYAN}Vault: {results['vault_path']}{Colors.END}")
-        output.append(f"{Colors.CYAN}Scanned: {results['timestamp']}{Colors.END}\n")
-        
-        # Summary
-        output.append(f"{Colors.BOLD}📋 Summary{Colors.END}")
-        output.append(f"  📄 Files: {summary['total_files']:,}")
-        output.append(f"  💾 Size: {summary['total_size_mb']:,} MB")
-        output.append(f"  📝 Words: {summary['total_words']:,}")
-        output.append(f"  🔗 Links: {summary['total_links']:,}")
-        output.append(f"  🏷️  Tags: {summary['total_tags']:,}")
-        output.append(f"  📋 Files with properties: {summary['files_with_properties']:,}")
-        output.append(f"  📅 Recent files (7d): {summary['recent_files_7d']:,}")
-        output.append("")
-        
-        # Issues
-        issues_count = len(results['orphans']) + len(results['broken_links'])
-        if issues_count > 0:
-            output.append(f"{Colors.BOLD}{Colors.YELLOW}⚠️  Issues Found ({issues_count}){Colors.END}")
-            
-            if results['orphans']:
-                output.append(f"{Colors.YELLOW}  🔸 Orphaned files: {len(results['orphans'])}{Colors.END}")
-                for orphan in results['orphans'][:5]:  # Show first 5
-                    output.append(f"    • {orphan['name']} ({orphan['word_count']} words)")
-                if len(results['orphans']) > 5:
-                    output.append(f"    ... and {len(results['orphans']) - 5} more")
-                    
-            if results['broken_links']:
-                output.append(f"{Colors.RED}  🔗 Broken links: {len(results['broken_links'])}{Colors.END}")
-                for link in results['broken_links'][:5]:
-                    suggestions = ", ".join(link['suggestions'][:2]) if link['suggestions'] else "none"
-                    output.append(f"    • '{link['target']}' in {link['source']} (suggestions: {suggestions})")
-                if len(results['broken_links']) > 5:
-                    output.append(f"    ... and {len(results['broken_links']) - 5} more")
-        else:
-            output.append(f"{Colors.GREEN}✅ No issues found!{Colors.END}")
-            
-        output.append("")
-        
-        # Top tags
-        tag_analysis = results['tag_analysis']
-        if tag_analysis.get('tag_usage'):
-            output.append(f"{Colors.BOLD}🏷️  Top Tags{Colors.END}")
-            for tag, info in list(tag_analysis['tag_usage'].items())[:10]:
-                output.append(f"  #{tag}: {info['count']} files")
-            output.append("")
-            
-        # Quick wins
-        output.append(f"{Colors.BOLD}💡 Quick Wins{Colors.END}")
-        if results['duplicates']:
-            output.append(f"  📑 Review {len(results['duplicates'])} potential duplicates")
-        if tag_analysis.get('similar_tags'):
-            output.append(f"  🔗 Merge {len(tag_analysis['similar_tags'])} similar tag pairs")
-        if tag_analysis.get('rare_tags'):
-            output.append(f"  🏷️  Review {len(tag_analysis['rare_tags'])} single-use tags")
-            
-        return "\n".join(output)
-        
-    def _format_markdown_report(self, results: Dict) -> str:
-        """Format results as Markdown report."""
-        output = []
-        summary = results['summary']
-        
-        # Header
-        output.append("# Obsidian Vault Health Report")
-        output.append(f"**Vault:** `{results['vault_path']}`")
-        output.append(f"**Generated:** {results['timestamp']}")
-        output.append("")
-        
-        # Summary
-        output.append("## 📊 Summary")
-        output.append("")
-        output.append("| Metric | Count |")
-        output.append("|--------|-------|")
-        output.append(f"| 📄 Files | {summary['total_files']:,} |")
-        output.append(f"| 💾 Size | {summary['total_size_mb']:,} MB |")
-        output.append(f"| 📝 Words | {summary['total_words']:,} |")
-        output.append(f"| 🔗 Links | {summary['total_links']:,} |")
-        output.append(f"| 🏷️ Tags | {summary['total_tags']:,} |")
-        output.append(f"| 📋 Files with properties | {summary['files_with_properties']:,} |")
-        output.append(f"| 📅 Recent files (7d) | {summary['recent_files_7d']:,} |")
-        output.append("")
-        
-        # Issues
-        issues_count = len(results['orphans']) + len(results['broken_links'])
-        if issues_count > 0:
-            output.append(f"## ⚠️ Issues ({issues_count})")
-            output.append("")
-            
-            if results['orphans']:
-                output.append(f"### 🔸 Orphaned Files ({len(results['orphans'])})")
-                output.append("")
-                output.append("Files with no incoming links:")
-                output.append("")
-                for orphan in results['orphans']:
-                    output.append(f"- **{orphan['name']}** ({orphan['word_count']} words, modified {orphan['modified'][:10]})")
-                output.append("")
+                merged_count = maintenance.merge_similar_tags(
+                    threshold=threshold,
+                    interactive=True,
+                    dry_run=dry_run
+                )
                 
-            if results['broken_links']:
-                output.append(f"### 🔗 Broken Links ({len(results['broken_links'])})")
-                output.append("")
-                for link in results['broken_links']:
-                    output.append(f"- `{link['target']}` in **{link['source']}**")
-                    if link['suggestions']:
-                        output.append(f"  - Suggestions: {', '.join(link['suggestions'])}")
-                output.append("")
-        else:
-            output.append("## ✅ No Issues")
-            output.append("")
-            output.append("Your vault is in great shape!")
-            output.append("")
-            
-        # Top tags
-        tag_analysis = results['tag_analysis']
-        if tag_analysis.get('tag_usage'):
-            output.append("## 🏷️ Tag Usage")
-            output.append("")
-            output.append("| Tag | Files |")
-            output.append("|-----|-------|")
-            for tag, info in list(tag_analysis['tag_usage'].items())[:15]:
-                output.append(f"| #{tag} | {info['count']} |")
-            output.append("")
-            
-        # Organization suggestions
-        suggestions = results['organization_suggestions']
-        if any(suggestions.values()):
-            output.append("## 📁 Organization Suggestions")
-            output.append("")
-            
-            if suggestions.get('flat_structure_warning'):
-                warning = suggestions['flat_structure_warning']
-                output.append(f"⚠️ **{warning['files_in_root']} files in root directory** - {warning['recommendation']}")
-                output.append("")
+                if merged_count == 0 and not dry_run:
+                    print(f"{Colors.GREEN}🎉 No similar tags found to merge!{Colors.RESET}")
+            else:
+                # Show tag analysis by default
+                reporter = ReportGenerator(analyzer)
+                tag_analysis = analysis_results['tag_analysis']
                 
-            if suggestions.get('by_date'):
-                output.append(f"### 📅 Date-based Files ({len(suggestions['by_date'])})")
-                output.append("")
-                output.append("These files could be organized in a `Journal/` folder:")
-                output.append("")
-                for file_path in suggestions['by_date']:
-                    output.append(f"- {file_path}")
-                output.append("")
+                print(f"\n{Colors.BOLD}🏷️  TAG ANALYSIS{Colors.RESET}")
+                print("=" * 30)
                 
-        return "\n".join(output)
+                print(f"\n{Colors.CYAN}Popular tags (5+ uses):{Colors.RESET}")
+                for tag, count in tag_analysis['popular_tags'][:10]:
+                    print(f"  #{tag}: {count} files")
+                
+                print(f"\n{Colors.YELLOW}Similar tags:{Colors.RESET}")
+                for tag1, tag2, similarity in tag_analysis['similar_tags'][:10]:
+                    print(f"  #{tag1} ≈ #{tag2} ({similarity:.1%})")
+                
+                if tag_analysis['similar_tags']:
+                    print(f"\n{Colors.CYAN}💡 Run with --merge-similar to merge duplicate tags{Colors.RESET}")
         
-    def _apply_link_fix(self, source_file: str, old_target: str, new_target: str):
-        """Apply a link fix to a file."""
-        file_path = self.analyzer.vault_path / source_file
-        content = file_path.read_text(encoding='utf-8')
+        elif args.command == 'organize':
+            org_suggestions = analysis_results['organization_suggestions']
+            
+            print(f"\n{Colors.BOLD}📁 ORGANIZATION SUGGESTIONS{Colors.RESET}")
+            print("=" * 40)
+            
+            if getattr(args, 'by', None) == 'date' or not getattr(args, 'by', None):
+                date_files = org_suggestions['date_based']
+                if date_files:
+                    print(f"\n{Colors.CYAN}📅 Date-based files ({len(date_files)}):{Colors.RESET}")
+                    for filename in date_files[:10]:
+                        print(f"  • {filename}")
+                    if len(date_files) > 10:
+                        print(f"  ... and {len(date_files) - 10} more")
+                    print(f"\n{Colors.BLUE}💡 Consider organizing these by year/month folders{Colors.RESET}")
+            
+            if getattr(args, 'by', None) == 'topic' or not getattr(args, 'by', None):
+                topic_clusters = org_suggestions['topic_clusters']
+                if topic_clusters:
+                    print(f"\n{Colors.MAGENTA}🏷️  Topic clusters:{Colors.RESET}")
+                    for tag, files in topic_clusters[:5]:
+                        print(f"  #{tag} ({len(files)} files):")
+                        for filename in files[:3]:
+                            print(f"    • {filename}")
+                        if len(files) > 3:
+                            print(f"    ... and {len(files) - 3} more")
+                    print(f"\n{Colors.BLUE}💡 Consider creating folders for major topics{Colors.RESET}")
         
-        # Replace wikilinks
-        content = content.replace(f"[[{old_target}]]", f"[[{new_target}]]")
-        content = content.replace(f"[[{old_target}|", f"[[{new_target}|")
-        
-        file_path.write_text(content, encoding='utf-8')
+        elif args.command == 'properties':
+            print(f"\n{Colors.BOLD}📋 PROPERTY ANALYSIS{Colors.RESET}")
+            print("=" * 30)
+            
+            fm_files = len(analyzer.frontmatter)
+            total_files = len(analyzer.files)
+            
+            print(f"Files with properties: {fm_files}/{total_files} ({fm_files/total_files*100:.1f}%)")
+            
+            if analyzer.frontmatter:
+                # Analyze property usage
+                all_props = defaultdict(int)
+                for props in analyzer.frontmatter.values():
+                    for prop in props.keys():
+                        all_props[prop] += 1
+                
+                print(f"\n{Colors.CYAN}Common properties:{Colors.RESET}")
+                for prop, count in sorted(all_props.items(), key=lambda x: x[1], reverse=True)[:10]:
+                    print(f"  {prop}: {count} files")
+    
+    except KeyboardInterrupt:
+        print(f"\n{Colors.YELLOW}⏹️  Analysis interrupted{Colors.RESET}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"\n{Colors.RED}❌ Error: {e}{Colors.RESET}")
+        if '--debug' in sys.argv:
+            raise
+        sys.exit(1)
+
 
 if __name__ == "__main__":
-    cli = VaultMaintenanceCLI()
-    cli.main()
+    main()

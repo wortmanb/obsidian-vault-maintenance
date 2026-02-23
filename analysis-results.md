@@ -1,0 +1,1892 @@
+# Obsidian Vault Health Report
+Generated: 2026-02-23 02:04:26
+
+## 📈 Statistics
+
+- **Files:** 870
+- **Size:** 2.13 MB
+- **Words:** 299,648
+- **Internal Links:** 1137
+- **Unique Tags:** 468
+- **Files with Properties:** 55
+
+## 🏝️ Orphaned Files (568)
+
+Files with no incoming links:
+
+- .md
+- 000 Home
+- 2021 Goals
+- 2021-06-10
+- 2021-06-11
+- 2021-06-12
+- 2021-06-15
+- 2021-06-16
+- 2021-06-19
+- 2021-06-25
+- 2021-06-29
+- 2021-07-02
+- 2021-07-03
+- 2021-07-06
+- 2021-07-08
+- 2021-09-13
+- 2021-09-15
+- 2021-09-21
+- 2021-09-25-BBQ
+- 2021-10-19
+- 2021-10-27
+- 2021-11-05
+- 2021-11-13
+- 2021-12-16
+- 2021-12-23
+- 2022 Sales
+- 2022-01-07
+- 2022-01-10
+- 2022-01-13
+- 2022-02-01
+- 2022-02-03
+- 2022-02-07
+- 2022-02-14
+- 2022-03-11
+- 2022-03-11 US Manufacturing Kickoff
+- 2022-03-18
+- 2022-03-22
+- 2022-04-05
+- 2022-04-07
+- 2022-04-19
+- 2022-04-28
+- 2022-05-04
+- 2022-05-08
+- 2022-05-16
+- 2022-05-19
+- 2022-06-01
+- 2022-06-09
+- 2022-06-11
+- 2022-06-20
+- 2022-06-30
+- 2022-07-06
+- 2022-07-19
+- 2022-07-25
+- 2022-09-06
+- 2022-09-08
+- 2022-09-19
+- 2022-12-29
+- 2022-W52
+- 2023-01-29
+- 2023-04-23
+- 2023-06-25
+- 2023-07-19
+- 2023-07-27
+- 2023-12-02
+- 2023-12-03
+- 2023-12-12
+- 2023-W01
+- 2023-W01 1
+- 2023-W02
+- 2023-W03
+- 2023-W03 1
+- 2023-W04
+- 2023-W04 1
+- 2023-W05
+- 2023-W05 1
+- 2023-W06
+- 2023-W06 1
+- 2023-W07
+- 2023-W07 1
+- 2023-W08
+- 2023-W08 1
+- 2023-W09
+- 2023-W09 1
+- 2023-W10
+- 2023-W10 1
+- 2023-W11
+- 2023-W12
+- 2023-W13
+- 2023-W14
+- 2023-W15
+- 2023-W16
+- 2023-W17
+- 2023-W18
+- 2023-W19
+- 2023-W20
+- 2023-W21
+- 2023-W22
+- 2023-W23
+- 2023-W24
+- 2023-W25
+- 2023-W26
+- 2023-W27
+- 2023-W28
+- 2023-W29
+- 2023-W30
+- 2023-W31
+- 2023-W32
+- 2023-W35
+- 2023-W36
+- 2023-W37
+- 2023-W38
+- 2023-W39
+- 2023-W40
+- 2023-W41
+- 2023-W42
+- 2023-W43
+- 2023-W44
+- 2023-W45
+- 2023-W46
+- 2023-W48
+- 2023-W49
+- 2023-W50
+- 2023-W51
+- 20230416 Tasks
+- 2024-01-19
+- 2024-W02
+- 2024-W04
+- 2024-W05
+- 2024-W06
+- 2024-W07
+- 2024-W08
+- 2024-W09
+- 2024-W10
+- 2024-W11
+- 2024-W12
+- 2024-W13
+- 2024-W14
+- 2024-W15
+- 2024-W16
+- 2024-W17
+- 2024-W18
+- 2024-W20
+- 2024-W21
+- 2024-W22
+- 2024-W23
+- 2024-W24
+- 2024-W25
+- 2024-W26
+- 2024-W27
+- 2024-W28
+- 2024-W29
+- 2024-W30
+- 2024-W31
+- 2024-W32
+- 2024-W33
+- 2024-W34
+- 2024-W35
+- 2024-W36
+- 2024-W37
+- 2024-W38
+- 2024-W39
+- 2024-W40
+- 2024-W41
+- 2024-W42
+- 2024-W43
+- 2024-W44
+- 2024-W45
+- 2024-W46
+- 2024-W47
+- 2024-W48
+- 2024-W49
+- 2024-W50
+- 2024-W51
+- 2025 Plan
+- 2025-W02
+- 2025-W07
+- 2025-W08
+- 2025-W09
+- 2025-W10
+- 2025-W11
+- 2025-W13
+- 2025-W14
+- 2025-W15
+- 2025-W16
+- 2025-W17
+- 2025-W32
+- 2026-01-30 Model Strategy and Storage Policy
+- 2026-02-01
+- 2026-02-02
+- 2026-02-03
+- 2026-02-04
+- 2026-02-05
+- 2026-02-06
+- 2026-02-09
+- 2026-02-10
+- 2026-02-11
+- 2026-02-13
+- 2026-02-13.sync-conflict-20260213-124718-K7VZ5WK
+- 2026-02-14
+- 2026-02-15
+- 2026-02-16
+- 2026-02-17
+- 2026-02-18
+- 2026-02-19
+- 2026-02-20
+- 2026-02-21
+- 2026-02-22
+- 8.5.3 Upgrade (now 8.6.0)
+- 8.5.3 upgrade issues
+- APT28 Demo Outline
+- Accelerate_network_performance_with_Cilium_BBR-Isovalent
+- Actual Budget K8s Setup
+- Ad Types
+- Add_an_HTTP_echo_service_to_your_Kubernetes_cluster
+- Air-Gapped Synthetic Project Setup
+- AliExpress Complaint
+- Allow_control-plane_nodes_to_schedule_pods
+- Amazon-com-HP_Z6_G4_Workstation-Intel_Xeon_Silver_4108_8-Core_1-8Ghz-192GB_DDR4_REG-Quadro_P400_Graphics_2GB-1-92TB_(Dual_960Gb_M-2_SSD_New)-1000w_PSU-(Renewed)-Electronics
+- Amerisource Bergen
+- Anniversary night
+- Apple Mac support
+- ArgoCD Remaining Fixes
+- Arthritis
+- Athena Issues
+- B2B Pitch
+- Band Videos
+- Bank Account Numbers
+- Barbacoa
+- Baremetal_Buildout
+- Bartender Mega License Key
+- Bayer AG Notes
+- Bayer Kickoff Notes
+- Beef Rib Tacos
+- Ben preadmission
+- Benchmarks_after_10gE_cards
+- Benchmarks_before_10gE_cards
+- Benefits
+- Blacksky Index
+- Booked
+- Boost_Linux_Network_Performance_with_BBR
+- Brand Protection
+- BrandShield
+- Bratwurst
+- Bruschetta
+- Bucatini with Lemony Carbonara
+- Building a Kubernetes 1.24 Cluster with `kubeadm`
+- Bullet Points
+- Car Inspection Due Dates
+- Car Washing
+- Car inspecttions
+- Cat Treat Recipe
+- Cert-Manager_with_Ingress-Nginx
+- Chicken Bacon Ranch Cheesesteak
+- Chicken Souvlaki with Tzatziki
+- Christina Shadowing Observations
+- Christmas 2024
+- Christmas Card List
+- Christmas ideas
+- Claude Code Prompts
+- Clearance 2023
+- Cloudflare API Token
+- Coffee
+- Colleges to visit with Ben
+- Combo Charts
+- Composite Roles (Security + Data source)
+- Configure_a_Security_Context_for_a_Pod_or_Container_|_Kubernetes
+- Configuring_and_Deploying_Kubernetes
+- Contents_of-etc-modules
+- Contents_of-etc-sysctl-conf
+- Corn Pasta Salad
+- Corned Beef Hash & Eggs
+- Cosearch
+- Create_a_new_token_and_join_command_to_rejoin-add_worker_node
+- Creating fapolicyd Rules
+- Current WB Projects
+- Cutter packaging
+- D&D Notes
+- DCC Book 8
+- Daily Decluttering
+- Dark Matter
+- Departments
+- Deploy_Elasticsearch_to_ECK
+- Deploy_the_ECK_Operator
+- Double Smoked Glazed Ham
+- ECE LB & Cert Setup
+- ECK
+- ECK Cluster Rename
+- ECK_Errata
+- ECK_Operator
+- EV Research - Tesla Model S Replacement
+- EchoTrak
+- El Fuego Vivente Hot Sauce
+- Elastic Certified Engineer Exam
+- Elastic Consulting Presentation Outline
+- Elastic Docker Login for docs
+- Elastic Engineer Notes
+- Elastic Questions
+- Elastic Resources
+- Elastic Serverless - Customer Getting Started Guide
+- Elastic Stack Platform Evaluation - Quick Execution Guide
+- Elastic Timeline
+- Elasticsearch Adding Node Without Enrollment Token
+- Elasticsearch Adding a Frozen Node
+- Elasticsearch Diagnosing Node Evictions
+- Elasticsearch Health Checks
+- Elasticsearch ILM vs DSL
+- Elasticsearch Kibana Permissions Guide
+- Elasticsearch Network Testing
+- Elasticsearch configs
+- Emma's Cherry Fluff Salad
+- Employee Traits
+- Encrypted_Mosquitto_MQTT_broker_in_Kubernetes_|_by_Maxime_Moreillon_|_Medium
+- Encrypted_Mosquitto_broker_in_Kubernetes
+- Essentialism
+- Ethan Onboarding
+- Exposing Clawdbot via Cloudflare One
+- FIO_test_run_of_Mayastor_PVC_(10gE,_1_replica)
+- FIO_test_run_of_Mayastor_PVC_(10gE,_2_replicas)
+- FIO_test_run_of_Mayastor_PVC_(1gE,_1_replica)
+- FIO_test_run_of_openebs-hostpath_PVC
+- FIO_testing
+- FIRST CASE
+- Favorite tools
+- Fiber Switch connection
+- First Deadly Conspiracy
+- Florida Trip Projects
+- Frank Guttierez's Workflow
+- Front slope planting area
+- Game Night Prep
+- Garlic Aioli
+- GenAI Workshop
+- Gift Wrap Bag
+- Goals
+- Google Calendar Automatic Buffers Guide
+- Great North Road
+- Greek Salad
+- HHS Demo Project
+- Ham Balls
+- Helm
+- Helm Chart Usage for Homelab Cluster
+- Helpful LVM Commands
+- Hiring an Employee
+- Home Apps
+- Home K8s Clusters
+- Home Maintenance
+- Home Network Reconfiguration
+- Home Projects
+- Home_Assistant,_OpenKruise,_and_Container_Loading_Order
+- Home_Assistant_on_Kubernetes-More-by_Alistair_Young
+- Home_Assistant_on_Kubernetes-The_Latest
+- Home_Assistant_on_Kubernetes-by_Alistair_Young
+- Homebrew Formulae
+- Homelab
+- Homelab Conversion
+- Homelab Infrastructure
+- Hours Aug 19-Aug 23
+- Houshold Tasks
+- How Warren Buffet hires people
+- How to track freezer temps
+- How_to_Manage_On-premise_Infrastructure_with_Terraform
+- How_to_deploy_MQTT_broker_to_Kubernetes
+- How_to_run_high_availability_Mosquitto_on_Kubernetes_·_Vasko's_Blog
+- Huge_improve_network_performance_by_change_TCP_congestion_control_to_BBR
+- Important Dates & Events
+- Increase_Linux_Internet_speed_with_TCP_BBR_congestion_control-nixCraft
+- Ingest via Beats
+- Ingress-Nginx-Controller
+- Ingress-Nginx_Ingress_manager
+- Init_Container_magic
+- Install_cilium_hubble
+- Installing_ECK_with_Terraform_on_GCP_|_Elastic_Blog
+- Inter-Agent Communication Plan
+- Interview Resources
+- Italy Itinerary
+- JMU SBC Info Meeting
+- Jalapeno Ranch
+- Jazz Warmup Exercises
+- Jellystone packing
+- Jerk Sauce
+- K8s setup notes
+- Keeper Recovery Phrase
+- Kessel Run
+- Killing Floor
+- Kubernetes LB Ports
+- Kustomize_patch_error-‘unable_to_parse_SM_or_JSON_patch_from’-alexdyas
+- LA County ISD Index
+- LMCO
+- Latin Jazz
+- Leg Spreader Recipe
+- Life "Plan"
+- Life Simplification
+- Makerspace Ordering Wish List
+- Makerspace ordering sytem
+- Managing_nodes_in_etcd
+- Marketing Email
+- Marketing Ideas
+- Marketing Philosophy
+- Mediterranean Aioli
+- Mexican Brisket
+- Migrating Clawdbot to a New Laptop
+- Mosquitto_MQTT_broker_in_Kubernetes_|_Enabler
+- Mosquitto_in_k8s
+- Mounting_NFS_to_a_container_running_on_Kubernetes_|_rudimartinsen-com
+- Moussaka
+- Movies to Watch
+- Murder as a Fine Art
+- My Pet Peeves about Holley
+- Nana's Ham Balls
+- Netplan_config_with_VLANs
+- NextCloud_OCC_on_Kubernetes_–_ZenCoffee_Blog_–_random_notes,_guides,_and_thoughts…
+- Nginx-Ingress_with_Basic_Auth
+- Node_Affinity
+- OIDC Info
+- Obsidian Plugins I'm Using
+- Offer From Ethan
+- One-liner
+- Orbiting Jupiter
+- Orbiting Jupiter-1655198408907
+- Orders
+- Outlander
+- Overnight Oats
+- PDF Ingest with ELSER
+- PPT for businesses
+- Packing List
+- Packing List 2024-08-15
+- Parenting the QBQ Way
+- Pattern.com
+- Physical LAN Connections
+- Pickled Red Onion
+- Pickled Red Onions
+- Pixel Notes
+- Plants
+- Plex_Pro_Week_‘23-A–Z_on_K8s_for_Plex_Media_Server_|_Plex
+- Plex_transcoding_with_Docker-NVIDIA_GPU-TiZu_Tech
+- Porsche Taycan Used Buyer's Guide
+- Power Outage Recovery
+- Practice Exam
+- Prague Packing List
+- Pre-Departure Tasks
+- Products
+- Promotion Presentation Outline
+- Put_everything_in_k8s_project
+- Querying_kubelet_API_for_stats
+- Questions for Ethan
+- Questions for Michael
+- RBAC_for_Elastic_Agent_to_actually_work
+- RPi Info for Esquared
+- Reach Brands
+- Reach Brands Financial call
+- Reach Brands Supply Chain calls
+- Recipes
+- Recovering stuck system indices
+- RedPoints
+- Redeploy_from_scratch
+- Repo_tags_to_track
+- Resource-High_Speed_Networking_Tuning_to_maximize_your_10G,_25G,_40G_networks_|_TrueNAS_Community
+- Run_a_non-persisting_container_one_time
+- Running_Home_Assistant_on_Kubernetes-Balagetech
+- Running_Plex_in_Docker_with_Hardware_Transcoding_|_digital-creations
+- SAWS
+- SAWS Observability
+- SEC+ Prep
+- SSNs
+- Safeco Claim
+- Sales Pitch
+- Scheduling_Pods_on_Kubernetes_Control_plane_(Master)_Nodes_|_ComputingForGeeks
+- SecurityOnion
+- September expenses
+- Service_DNS_names
+- Service_|_Kubernetes
+- Shell_history_dumping_ground
+- Shepherd's Pie
+- Shipping Terms
+- Sidney Chambers and The Shadow of Death
+- Smoked Shotgun Shells
+- Soboro Don
+- Space Case
+- Steps_to_recover_from_on-prem_K8s_cluster_volume_multi_attach_error
+- Sticky Pineapple Chicken
+- Strategic Coach 2022-08-17
+- TFTF Laptop Setup
+- Taco Pie
+- Tape Packaging
+- Tech Panel Questions
+- Ted Lasso Finale Predictions
+- Terms
+- The 4-Hour Workweek, Expanded and Updated
+- The Cardio-Free Diet
+- The Gift of Failure
+- The Graveyard Book
+- The Hunger Games
+- The Lord Of The Rings
+- The Magic of Recluce
+- The Music Lesson
+- The Natural Order
+- The Other Boleyn Girl
+- The Phoenix Project
+- The Seventh Most Important Thing
+- The Wise Mans Fear
+- Things to do in UK
+- Traefik_Installation
+- Transition Plan
+- Travel
+- Trinidadian Hot Sauce
+- Troubleshooting
+- Turkey Cranberry Sliders
+- Tzatziki Sauce
+- USACE Work
+- Untitled
+- Untitled 1
+- Untitled 1 1
+- Untitled 2
+- Untitled 3
+- Untitled 4
+- Untitled 5
+- Untitled 6
+- Update_API_Objects_in_Place_Using_kubectl_patch_|_Kubernetes
+- Upgrade Notes for Large Clusters
+- Upgrade-Shutdown-Cordon_Node
+- Using Elasticsearch from Python
+- Using_a_wildcard_certificate_within_your_Kubernetes_cluster_|_by_Martin_Hodges_|_Medium
+- VA Job Description
+- VMware Lab Details
+- VT Questions
+- Vault Setup
+- Velero
+- Voice Assistant for HomeAssistant
+- Voicemail Script
+- WB Digital Migration
+- WB Payout plans
+- Warriors #3
+- Weekends Fall 2023
+- Wiper Blades
+- Wool Omnibus Edition [Kindle in Motion]
+- all-in-one-migration-md_at_main_·_nextcloud-all-in-one
+- cert-manager
+- cilium
+- clustersecret
+- completed impact filters
+- containerd_systemd_service_file
+- csi-driver-nfs
+- day, cut nodes in half, and still improve performance
+- emberstack-kubernetes-reflector-Custom_Kubernetes_controller_that_can_be_used_to_replicate_secrets,_configmaps_and_certificates-
+- es-test cluster
+- etcd-local-storage-migration
+- externalTrafficPolicy-Local_or_Cluster
+- helm chart overrides
+- homelab
+- internal-ippool-yaml
+- iot-ippool-yaml
+- kubealex-k8s-mediaserver-operator-Repository_for_k8s_Mediaserver_Operator_project
+- kubectl_Cheat_Sheet_|_Kubernetes
+- leadership
+- longhorn_(storage_class)
+- mayastor-pools-yaml
+- metallb
+- metallb-l2-internal-yaml
+- metallb-l2-iot-yaml
+- nCave Stabilization
+- netstat_buffer_monitoring
+- nginx_reverse-proxy_to_SSL_backend_host
+- ntfy-sh_|_Send_push_notifications_to_your_phone_via_PUT-POST
+- openebs
+- pms-docker-charts-plex-media-server-values-yaml_at_master_·_plexinc-pms-docker
+- systemd workaround
+- thewortmans.org Settings
+- zalando-postgres-operator-Postgres_operator_creates_and_manages_PostgreSQL_clusters_running_in_Kubernetes
+- 🇮🇹 Two-Week Italy Itinerary (May 23 – June 6 2026)
+
+## 🔗 Broken Links (660)
+
+Links pointing to non-existent files:
+
+- **000 Home** → `Crestwood Industries`
+- **000 Home** → `Notes/Archived/Coffee`
+- **2021-04-20** → `Department of Commerce`
+  - 💡 Suggestion: `Departments`
+- **2021-04-20** → `US Commercial Service`
+- **2021-04-20** → `UVACCU`
+- **2021-04-20** → `VEDP`
+- **2021-06-16** → `Swimming Pool`
+- **2021-06-18** → `FedEx`
+- **2021-06-18** → `UPS`
+- **2021-06-18** → `ink`
+- **2021-06-22** → `Chet Schultz`
+- **2021-06-29** → `2021-07-05`
+  - 💡 Suggestion: `2021-08-05`
+- **2021-07-12** → `Redhawk`
+  - 💡 Suggestion: `Redhawk Changes`
+- **2021-07-16** → `Airtable`
+- **2021-07-16** → `Chloe`
+- **2021-07-16** → `NWFCU`
+- **2021-07-16** → `Order Tracking`
+  - 💡 Suggestion: `Cutter packaging`
+- **2021-07-17** → `Sales/Brenda Conroy`
+  - 💡 Suggestion: `Call with Brenda Conroy`
+- **2021-07-20** → `2021-07-19`
+  - 💡 Suggestion: `2023-07-19`
+- **2021-07-22** → `D2C`
+- **2021-07-22** → `John Finn`
+- **2021-07-22** → `Mike Tobin`
+  - 💡 Suggestion: `Mike Montalvo`
+- **2021-07-22** → `SPS Commerce`
+- **2021-07-23** → `Mike Tobin`
+  - 💡 Suggestion: `Mike Montalvo`
+- **2021-07-23 - Vision33 Meeting** → `SAP BusinessOne`
+  - 💡 Suggestion: `PPT for businesses`
+- **2021-07-23 - Vision33 Meeting** → `Steven Airoldi`
+  - 💡 Suggestion: `Mediterranean Aioli`
+- **2021-07-23 - Vision33 Meeting** → `Vision33`
+- **2021-07-24** → `2021-07-25`
+  - 💡 Suggestion: `2022-07-25`
+- **2021-07-26** → `2021-07-25`
+  - 💡 Suggestion: `2022-07-25`
+- **2021-07-27** → `2021-07-28`
+  - 💡 Suggestion: `2021-09-28`
+- **2021-07-29** → `2021-07-28`
+  - 💡 Suggestion: `2021-09-28`
+- **2021-07-29** → `2021-07-30`
+  - 💡 Suggestion: `2021-09-30`
+- **2021-08-02** → `2021-08-01`
+  - 💡 Suggestion: `2021-09-01`
+- **2021-08-02** → `Holley`
+- **2021-08-04** → `Zapier`
+- **2021-08-05** → `2021-08-06`
+  - 💡 Suggestion: `2021-08-30`
+- **2021-08-05** → `Hiking-Mount-Tom.pdf`
+- **2021-08-10** → `2021-08-09`
+  - 💡 Suggestion: `2021-09-09`
+- **2021-08-14** → `2021-08-15`
+  - 💡 Suggestion: `2021-10-15`
+- **2021-08-16** → `2021-08-15`
+  - 💡 Suggestion: `2021-10-15`
+- **2021-08-21** → `2021-08-22`
+  - 💡 Suggestion: `2021-08-27`
+- **2021-08-23** → `2021-08-22`
+  - 💡 Suggestion: `2021-08-27`
+- **2021-08-26** → `Strategic Coach`
+  - 💡 Suggestion: `Strategic Coach 2022-08-17`
+- **2021-08-27** → `2021-08-28`
+  - 💡 Suggestion: `2021-09-28`
+- **2021-08-27** → `Sales/Brenda Conroy`
+  - 💡 Suggestion: `Call with Brenda Conroy`
+- **2021-08-27-BBQ** → `2021-08-28`
+  - 💡 Suggestion: `2021-09-28`
+- **2021-08-30** → `2021-08-29`
+  - 💡 Suggestion: `2021-09-29`
+- **2021-09-03** → `2021-09-04`
+  - 💡 Suggestion: `2021-09-30`
+- **2021-09-03** → `Mike Tobin`
+  - 💡 Suggestion: `Mike Montalvo`
+- **2021-09-07** → `2021-09-06`
+  - 💡 Suggestion: `2022-09-06`
+- **2021-09-10** → `2021-09-11`
+  - 💡 Suggestion: `2021-09-21`
+- **2021-09-13** → `2021-09-12`
+  - 💡 Suggestion: `2021-09-29`
+- **2021-09-13** → `2021-09-14`
+  - 💡 Suggestion: `2021-10-14`
+- **2021-09-15** → `2021-09-14`
+  - 💡 Suggestion: `2021-10-14`
+- **2021-09-15** → `2021-09-16`
+  - 💡 Suggestion: `2021-09-21`
+- **2021-09-21** → `2021-09-20`
+  - 💡 Suggestion: `2021-09-30`
+- **2021-09-21** → `2021-09-22`
+  - 💡 Suggestion: `2021-09-29`
+- **2021-09-23** → `2021-09-22`
+  - 💡 Suggestion: `2021-09-29`
+- **2021-09-24** → `2021-09-25`
+  - 💡 Suggestion: `2021-09-29`
+- **2021-09-27** → `2021-09-26`
+  - 💡 Suggestion: `2021-09-29`
+- **2021-09-30** → `2021-10-01`
+  - 💡 Suggestion: `2021-10-19`
+- **2021-10-14** → `2021-10-13`
+  - 💡 Suggestion: `2021-11-13`
+- **2021-10-15** → `2021-10-16`
+  - 💡 Suggestion: `2021-12-16`
+- **2021-10-19** → `2021-10-18`
+  - 💡 Suggestion: `2021-10-19`
+- **2021-10-19** → `2021-10-20`
+  - 💡 Suggestion: `2021-11-20`
+- **2021-10-27** → `2021-10-26`
+  - 💡 Suggestion: `2021-10-27`
+- **2021-10-27** → `2021-10-28`
+  - 💡 Suggestion: `2021-10-27`
+- **2021-11-05** → `2021-11-04`
+  - 💡 Suggestion: `2021-11-20`
+- **2021-11-05** → `2021-11-06`
+  - 💡 Suggestion: `2021-11-20`
+- **2021-11-13** → `2021-11-12`
+  - 💡 Suggestion: `2021-11-20`
+- **2021-11-13** → `2021-11-14`
+  - 💡 Suggestion: `2021-11-19`
+- **2021-11-19** → `2021-11-18`
+  - 💡 Suggestion: `2021-11-19`
+- **2021-11-20** → `2021-11-21`
+  - 💡 Suggestion: `2021-11-20`
+- **2021-12-23** → `2021-12-22`
+  - 💡 Suggestion: `2021-12-23`
+- **2021-12-23** → `2021-12-24`
+  - 💡 Suggestion: `2021-12-23`
+- **2022-01-07** → `2022-01-06`
+  - 💡 Suggestion: `2022-09-06`
+- **2022-01-07** → `2022-01-08`
+  - 💡 Suggestion: `2022-09-08`
+- **2022-01-07** → `Mike Tracy`
+  - 💡 Suggestion: `Mike Simacek`
+- **2022-01-10** → `2022-01-09`
+  - 💡 Suggestion: `2022-06-09`
+- **2022-01-10** → `2022-01-11`
+  - 💡 Suggestion: `2022-06-11`
+- **2022-01-13** → `2022-01-12`
+  - 💡 Suggestion: `2022-05-12`
+- **2022-01-13** → `2022-01-14`
+  - 💡 Suggestion: `2022-06-14`
+- **2022-01-18** → `2022-01-17`
+  - 💡 Suggestion: `2022-06-17`
+- **2022-01-20** → `2022-01-21`
+  - 💡 Suggestion: `2022-03-21`
+- **2022-01-24** → `2022-01-23`
+  - 💡 Suggestion: `2022-06-23`
+- **2022-01-24** → `QBO`
+- **2022-01-24** → `golang`
+- **2022-01-28** → `2022-01-29`
+  - 💡 Suggestion: `2023-01-29`
+- **2022-02-01** → `2022-01-31`
+  - 💡 Suggestion: `2022-01-19`
+- **2022-02-01** → `2022-02-02`
+  - 💡 Suggestion: `2026-02-02`
+- **2022-02-03** → `2022-02-02`
+  - 💡 Suggestion: `2026-02-02`
+- **2022-02-03** → `2022-02-04`
+  - 💡 Suggestion: `2026-02-04`
+- **2022-02-07** → `2022-02-06`
+  - 💡 Suggestion: `2026-02-06`
+- **2022-02-07** → `2022-02-08`
+  - 💡 Suggestion: `2022-09-08`
+- **2022-02-14** → `2022-02-13`
+  - 💡 Suggestion: `2026-02-13`
+- **2022-02-14** → `2022-02-15`
+  - 💡 Suggestion: `2026-02-15`
+- **2022-03-11** → `2022-03-10`
+  - 💡 Suggestion: `2022-03-21`
+- **2022-03-11** → `2022-03-12`
+  - 💡 Suggestion: `2022-05-12`
+- **2022-03-18** → `2022-03-17`
+  - 💡 Suggestion: `2022-06-17`
+- **2022-03-18** → `2022-03-19`
+  - 💡 Suggestion: `2022-09-19`
+- **2022-03-22** → `2022-03-23`
+  - 💡 Suggestion: `2022-06-23`
+- **2022-03-22** → `Scarborough Logistics`
+- **2022-04-01** → `2022-03-31`
+  - 💡 Suggestion: `2022-03-21`
+- **2022-04-01** → `Jeff Coffin`
+  - 💡 Suggestion: `Jeff Coffin Itinerary`
+- **2022-04-02** → `2022-04-03`
+  - 💡 Suggestion: `2022-05-03`
+- **2022-04-05** → `2022-04-04`
+  - 💡 Suggestion: `2022-05-04`
+- **2022-04-05** → `2022-04-06`
+  - 💡 Suggestion: `2022-09-06`
+- **2022-04-07** → `2022-04-06`
+  - 💡 Suggestion: `2022-09-06`
+- **2022-04-07** → `2022-04-08`
+  - 💡 Suggestion: `2022-09-08`
+- **2022-04-12** → `2022-04-11`
+  - 💡 Suggestion: `2022-06-11`
+- **2022-04-14** → `2022-04-15`
+  - 💡 Suggestion: `2022-06-15`
+- **2022-04-19** → `2022-04-18`
+  - 💡 Suggestion: `2022-05-18`
+- **2022-04-19** → `2022-04-20`
+  - 💡 Suggestion: `2022-06-20`
+- **2022-04-28** → `2022-04-27`
+  - 💡 Suggestion: `2022-06-27`
+- **2022-04-28** → `2022-04-29`
+  - 💡 Suggestion: `2022-04-28`
+- **2022-05-03** → `2022-05-02`
+  - 💡 Suggestion: `2022-09-02`
+- **2022-05-03** → `Notes/Processing/2022-05-04`
+- **2022-05-05** → `2022-05-06`
+  - 💡 Suggestion: `2022-09-06`
+- **2022-05-05** → `Notes/Processing/2022-05-04`
+- **2022-05-08** → `2022-05-07`
+  - 💡 Suggestion: `2022-05-20`
+- **2022-05-08** → `2022-05-09`
+  - 💡 Suggestion: `2022-06-09`
+- **2022-05-12** → `2022-05-11`
+  - 💡 Suggestion: `2022-06-11`
+- **2022-05-12** → `2022-05-13`
+  - 💡 Suggestion: `2022-06-13`
+- **2022-05-16** → `2022-05-15`
+  - 💡 Suggestion: `2022-06-15`
+- **2022-05-16** → `2022-05-17`
+  - 💡 Suggestion: `2023-05-17`
+- **2022-05-18** → `2022-05-17`
+  - 💡 Suggestion: `2023-05-17`
+- **2022-05-18** → `Notes/Processing/2022-05-19`
+- **2022-05-20** → `2022-05-21`
+  - 💡 Suggestion: `2022-05-25`
+- **2022-05-20** → `Notes/Processing/2022-05-19`
+- **2022-05-25** → `2022-05-23`
+  - 💡 Suggestion: `2022-06-23`
+- **2022-06-01** → `2022-05-31`
+  - 💡 Suggestion: `2022-05-19`
+- **2022-06-01** → `2022-06-02`
+  - 💡 Suggestion: `2022-09-02`
+- **2022-06-09** → `2022-06-08`
+  - 💡 Suggestion: `2022-09-08`
+- **2022-06-09** → `2022-06-10`
+  - 💡 Suggestion: `2022-06-30`
+- **2022-06-11** → `2022-06-10`
+  - 💡 Suggestion: `2022-06-30`
+- **2022-06-11** → `2022-06-12`
+  - 💡 Suggestion: `2022-06-28`
+- **2022-06-13** → `2022-06-12`
+  - 💡 Suggestion: `2022-06-28`
+- **2022-06-14** → `Elastic Tasks`
+  - 💡 Suggestion: `Elasticsearch Tasks`
+- **2022-06-17** → `2022-06-18`
+  - 💡 Suggestion: `2022-06-28`
+- **2022-06-20** → `2022-06-19`
+  - 💡 Suggestion: `2022-09-19`
+- **2022-06-20** → `2022-06-21`
+  - 💡 Suggestion: `2022-06-28`
+- **2022-06-22** → `2022-06-21`
+  - 💡 Suggestion: `2022-06-28`
+- **2022-06-23** → `2022-06-24`
+  - 💡 Suggestion: `2022-06-28`
+- **2022-06-23** → `Strategic Coach`
+  - 💡 Suggestion: `Strategic Coach 2022-08-17`
+- **2022-06-27** → `2022-06-26`
+  - 💡 Suggestion: `2022-06-28`
+- **2022-06-28** → `2022-06-29`
+  - 💡 Suggestion: `2022-06-28`
+- **2022-06-28** → `Renee Frost`
+- **2022-06-30** → `2022-06-29`
+  - 💡 Suggestion: `2022-06-28`
+- **2022-06-30** → `2022-07-01`
+  - 💡 Suggestion: `2022-09-01`
+- **2022-07-06** → `2022-07-05`
+  - 💡 Suggestion: `2022-07-25`
+- **2022-07-06** → `2022-07-07`
+  - 💡 Suggestion: `2022-07-06`
+- **2022-07-19** → `2022-07-18`
+  - 💡 Suggestion: `2022-07-19`
+- **2022-07-19** → `2022-07-20`
+  - 💡 Suggestion: `2022-07-25`
+- **2022-07-25** → `2022-07-24`
+  - 💡 Suggestion: `2022-07-25`
+- **2022-07-25** → `2022-07-26`
+  - 💡 Suggestion: `2022-07-25`
+- **2022-09-01** → `2022-08-31`
+  - 💡 Suggestion: `2021-08-31`
+- **2022-09-02** → `2022-09-03`
+  - 💡 Suggestion: `2022-09-08`
+- **2022-09-06** → `2022-09-05`
+  - 💡 Suggestion: `2022-09-08`
+- **2022-09-06** → `2022-09-07`
+  - 💡 Suggestion: `2022-09-08`
+- **2022-09-08** → `2022-09-07`
+  - 💡 Suggestion: `2022-09-08`
+- **2022-09-08** → `2022-09-09`
+  - 💡 Suggestion: `2022-09-19`
+- **2022-09-19** → `2022-09-18`
+  - 💡 Suggestion: `2022-09-19`
+- **2022-09-19** → `2022-09-20`
+  - 💡 Suggestion: `2022-09-08`
+- **2022-12-29** → `2022-12-28`
+  - 💡 Suggestion: `2022-12-29`
+- **2022-12-29** → `2022-12-30`
+  - 💡 Suggestion: `2023-12-03`
+- **2022-W52** → `2022-W51`
+  - 💡 Suggestion: `2024-W51`
+- **2022-W53** → `2022-W21`
+  - 💡 Suggestion: `2024-W21`
+- **2022-W53** → `2022-W23`
+  - 💡 Suggestion: `2024-W23`
+- **2023-01-26** → `2023-01-25`
+  - 💡 Suggestion: `2023-06-25`
+- **2023-01-28** → `2023-01-29 1`
+  - 💡 Suggestion: `2023-01-29`
+- **2023-01-29** → `2023-01-30`
+  - 💡 Suggestion: `2023-12-03`
+- **2023-04-23** → `2023-04-22`
+  - 💡 Suggestion: `2023-04-28`
+- **2023-04-23** → `2023-04-24`
+  - 💡 Suggestion: `2023-04-28`
+- **2023-04-28** → `2023-04-27`
+  - 💡 Suggestion: `2023-07-27`
+- **2023-04-28** → `2023-04-29`
+  - 💡 Suggestion: `2023-04-28`
+- **2023-05-17** → `2023-05-16`
+  - 💡 Suggestion: `2023-05-18`
+- **2023-05-18** → `2023-05-19`
+  - 💡 Suggestion: `2023-07-19`
+- **2023-06-25** → `2023-06-24`
+  - 💡 Suggestion: `2023-06-25`
+- **2023-06-25** → `2023-06-26`
+  - 💡 Suggestion: `2023-06-25`
+- **2023-W01** → `2022-W22`
+  - 💡 Suggestion: `2024-W22`
+- **2023-W01 1** → `2022-W22`
+  - 💡 Suggestion: `2024-W22`
+- **2023-W02** → `2023-01-11`
+  - 💡 Suggestion: `2023-12-11`
+- **2023-W02** → `2023-01-12`
+  - 💡 Suggestion: `2023-12-12`
+- **2023-W02** → `2023-01-24`
+  - 💡 Suggestion: `2023-01-29`
+- **2023-W02 1** → `2023-01-11`
+  - 💡 Suggestion: `2023-12-11`
+- **2023-W02 1** → `2023-01-12`
+  - 💡 Suggestion: `2023-12-12`
+- **2023-W02 1** → `2023-01-24`
+  - 💡 Suggestion: `2023-01-29`
+- **2023-W04** → `2023-W05%201`
+  - 💡 Suggestion: `2023-W05 1`
+- **2023-W04 1** → `2023-W05%201`
+  - 💡 Suggestion: `2023-W05 1`
+- **2023-W05** → `2023-01-06`
+  - 💡 Suggestion: `2023-01-26`
+- **2023-W05** → `2023-01-30`
+  - 💡 Suggestion: `2023-12-03`
+- **2023-W05** → `2023-01-31`
+  - 💡 Suggestion: `2024-01-19`
+- **2023-W05** → `2023-02-02`
+  - 💡 Suggestion: `2026-02-02`
+- **2023-W05 1** → `2023-01-06`
+  - 💡 Suggestion: `2023-01-26`
+- **2023-W05 1** → `2023-01-30`
+  - 💡 Suggestion: `2023-12-03`
+- **2023-W05 1** → `2023-01-31`
+  - 💡 Suggestion: `2024-01-19`
+- **2023-W05 1** → `2023-02-02`
+  - 💡 Suggestion: `2026-02-02`
+- **2023-W06** → `2023-02-06`
+  - 💡 Suggestion: `2026-02-06`
+- **2023-W06** → `2023-02-07`
+  - 💡 Suggestion: `2023-06-07`
+- **2023-W06** → `2023-02-08`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W06** → `2023-02-09`
+  - 💡 Suggestion: `2026-02-09`
+- **2023-W06 1** → `2023-02-06`
+  - 💡 Suggestion: `2026-02-06`
+- **2023-W06 1** → `2023-02-07`
+  - 💡 Suggestion: `2023-06-07`
+- **2023-W06 1** → `2023-02-08`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W06 1** → `2023-02-09`
+  - 💡 Suggestion: `2026-02-09`
+- **2023-W07** → `2023-02-13`
+  - 💡 Suggestion: `2026-02-13`
+- **2023-W07** → `2023-02-14`
+  - 💡 Suggestion: `2026-02-14`
+- **2023-W07** → `2023-02-15`
+  - 💡 Suggestion: `2026-02-15`
+- **2023-W07** → `2023-02-16`
+  - 💡 Suggestion: `2026-02-16`
+- **2023-W07 1** → `2023-02-13`
+  - 💡 Suggestion: `2026-02-13`
+- **2023-W07 1** → `2023-02-14`
+  - 💡 Suggestion: `2026-02-14`
+- **2023-W07 1** → `2023-02-15`
+  - 💡 Suggestion: `2026-02-15`
+- **2023-W07 1** → `2023-02-16`
+  - 💡 Suggestion: `2026-02-16`
+- **2023-W08** → `2023-02-21`
+  - 💡 Suggestion: `2026-02-21`
+- **2023-W08** → `2023-02-22`
+  - 💡 Suggestion: `2026-02-22`
+- **2023-W08** → `2023-02-23`
+  - 💡 Suggestion: `2023-04-23`
+- **2023-W08** → `2023-02-24`
+  - 💡 Suggestion: `2026-02-22`
+- **2023-W08** → `2023-03-01`
+  - 💡 Suggestion: `2026-02-01`
+- **2023-W08 1** → `2023-02-21`
+  - 💡 Suggestion: `2026-02-21`
+- **2023-W08 1** → `2023-02-22`
+  - 💡 Suggestion: `2026-02-22`
+- **2023-W08 1** → `2023-02-23`
+  - 💡 Suggestion: `2023-04-23`
+- **2023-W08 1** → `2023-02-24`
+  - 💡 Suggestion: `2026-02-22`
+- **2023-W08 1** → `2023-03-01`
+  - 💡 Suggestion: `2026-02-01`
+- **2023-W09** → `2023-03-01`
+  - 💡 Suggestion: `2026-02-01`
+- **2023-W09** → `2023-03-02`
+  - 💡 Suggestion: `2023-12-02`
+- **2023-W09 1** → `2023-03-01`
+  - 💡 Suggestion: `2026-02-01`
+- **2023-W09 1** → `2023-03-02`
+  - 💡 Suggestion: `2023-12-02`
+- **2023-W10** → `2023-03-06`
+  - 💡 Suggestion: `2026-02-06`
+- **2023-W10** → `2023-03-08`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W10** → `2023-03-09`
+  - 💡 Suggestion: `2023-06-09`
+- **2023-W10** → `2023-03-10`
+  - 💡 Suggestion: `2026-02-10`
+- **2023-W10 1** → `2023-03-06`
+  - 💡 Suggestion: `2026-02-06`
+- **2023-W10 1** → `2023-03-08`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W10 1** → `2023-03-09`
+  - 💡 Suggestion: `2023-06-09`
+- **2023-W10 1** → `2023-03-10`
+  - 💡 Suggestion: `2026-02-10`
+- **2023-W11** → `2023-03-13`
+  - 💡 Suggestion: `2026-02-13`
+- **2023-W11** → `2023-03-14`
+  - 💡 Suggestion: `2026-02-14`
+- **2023-W11** → `2023-03-15`
+  - 💡 Suggestion: `2026-02-15`
+- **2023-W11** → `2023-03-16`
+  - 💡 Suggestion: `2026-02-16`
+- **2023-W11** → `2023-03-17`
+  - 💡 Suggestion: `2023-05-17`
+- **2023-W12** → `2023-03-20`
+  - 💡 Suggestion: `2026-02-20`
+- **2023-W12** → `2023-03-21`
+  - 💡 Suggestion: `2022-03-21`
+- **2023-W12** → `2023-03-22`
+  - 💡 Suggestion: `2022-03-22`
+- **2023-W12** → `2023-03-23`
+  - 💡 Suggestion: `2023-04-23`
+- **2023-W12** → `2023-03-24`
+  - 💡 Suggestion: `2024-10-24`
+- **2023-W12** → `2023-03-27`
+  - 💡 Suggestion: `2023-07-27`
+- **2023-W13** → `2023-03-27`
+  - 💡 Suggestion: `2023-07-27`
+- **2023-W13** → `2023-03-28`
+  - 💡 Suggestion: `2023-04-28`
+- **2023-W13** → `2023-03-29`
+  - 💡 Suggestion: `2023-01-29`
+- **2023-W13** → `2023-03-30`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W14** → `2023-04-03`
+  - 💡 Suggestion: `2023-07-03`
+- **2023-W14** → `2023-04-04`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W14** → `2023-04-05`
+  - 💡 Suggestion: `2022-04-05`
+- **2023-W14** → `2023-04-06`
+  - 💡 Suggestion: `2026-02-06`
+- **2023-W14** → `2023-04-07`
+  - 💡 Suggestion: `2023-06-07`
+- **2023-W15** → `2023-04-10`
+  - 💡 Suggestion: `2026-02-10`
+- **2023-W15** → `2023-04-11`
+  - 💡 Suggestion: `2026-02-11`
+- **2023-W15** → `2023-04-12`
+  - 💡 Suggestion: `2023-04-28`
+- **2023-W16** → `2023-04-17`
+  - 💡 Suggestion: `2023-05-17`
+- **2023-W16** → `2023-04-18`
+  - 💡 Suggestion: `2023-05-18`
+- **2023-W16** → `2023-04-19`
+  - 💡 Suggestion: `2023-07-19`
+- **2023-W17** → `2023-04-24`
+  - 💡 Suggestion: `2023-04-28`
+- **2023-W17** → `2023-04-27`
+  - 💡 Suggestion: `2023-07-27`
+- **2023-W18** → `2023-05-01`
+  - 💡 Suggestion: `2023-05-18`
+- **2023-W18** → `2023-05-02`
+  - 💡 Suggestion: `2023-12-02`
+- **2023-W18** → `2023-05-03`
+  - 💡 Suggestion: `2023-07-03`
+- **2023-W19** → `2023-05-08`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W19** → `2023-05-10`
+  - 💡 Suggestion: `2023-05-18`
+- **2023-W19** → `2023-05-11`
+  - 💡 Suggestion: `2023-05-18`
+- **2023-W19** → `2023-05-12`
+  - 💡 Suggestion: `2023-05-18`
+- **2023-W20** → `2023-05-15`
+  - 💡 Suggestion: `2023-05-18`
+- **2023-W20** → `2023-05-16`
+  - 💡 Suggestion: `2023-05-18`
+- **2023-W20** → `2023-05-19`
+  - 💡 Suggestion: `2023-07-19`
+- **2023-W21** → `2023-05-22`
+  - 💡 Suggestion: `2026-02-22`
+- **2023-W21** → `2023-05-24`
+  - 💡 Suggestion: `2024-10-24`
+- **2023-W21** → `2023-05-25`
+  - 💡 Suggestion: `2023-06-25`
+- **2023-W21** → `2023-05-26`
+  - 💡 Suggestion: `2023-01-26`
+- **2023-W22** → `2023-05-30`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W22** → `2023-05-31`
+  - 💡 Suggestion: `2023-05-18`
+- **2023-W22** → `2023-06-01`
+  - 💡 Suggestion: `2023-06-09`
+- **2023-W22** → `2023-06-02`
+  - 💡 Suggestion: `2023-06-25`
+- **2023-W22** → `2023-06-05`
+  - 💡 Suggestion: `2023-06-25`
+- **2023-W23** → `2023-06-05`
+  - 💡 Suggestion: `2023-06-25`
+- **2023-W23** → `2023-06-08`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W24** → `2023-06-12`
+  - 💡 Suggestion: `2023-06-25`
+- **2023-W24** → `2023-06-13`
+  - 💡 Suggestion: `2022-06-13`
+- **2023-W25** → `2023-06-20`
+  - 💡 Suggestion: `2023-06-25`
+- **2023-W25** → `2023-06-21`
+  - 💡 Suggestion: `2023-06-25`
+- **2023-W25** → `2023-06-22`
+  - 💡 Suggestion: `2023-06-25`
+- **2023-W33** → `2023-08-15`
+  - 💡 Suggestion: `2026-02-15`
+- **2023-W33** → `2023-08-16`
+  - 💡 Suggestion: `2021-08-16`
+- **2023-W35** → `2023-08-28`
+  - 💡 Suggestion: `2023-04-28`
+- **2023-W35** → `2023-08-30`
+  - 💡 Suggestion: `2021-08-30`
+- **2023-W35** → `2023-09-01`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W36** → `2023-09-06`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W36** → `2023-09-07`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W37** → `2023-09-11`
+  - 💡 Suggestion: `2026-02-11`
+- **2023-W37** → `2023-09-13`
+  - 💡 Suggestion: `2021-09-13`
+- **2023-W38** → `2023-09`
+  - 💡 Suggestion: `2023-W09`
+- **2023-W38** → `2023-09-18`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W38** → `2023-09-19`
+  - 💡 Suggestion: `2023-07-19`
+- **2023-W38** → `2023-09-20`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W39** → `2023-09-25`
+  - 💡 Suggestion: `2023-06-25`
+- **2023-W39** → `2023-09-27`
+  - 💡 Suggestion: `2023-07-27`
+- **2023-W39** → `2023-09-28`
+  - 💡 Suggestion: `2023-09-08`
+- **2023-W39** → `2023-09-29`
+  - 💡 Suggestion: `2023-01-29`
+- **2023-W40** → `2023-10-02`
+  - 💡 Suggestion: `2023-12-02`
+- **2023-W40** → `2023-10-05`
+  - 💡 Suggestion: `2026-02-05`
+- **2023-W40** → `2023-10-06`
+  - 💡 Suggestion: `2026-02-06`
+- **2023-W42** → `2023-10-16`
+  - 💡 Suggestion: `2026-02-16`
+- **2023-W42** → `2023-10-17`
+  - 💡 Suggestion: `2023-05-17`
+- **2023-W42** → `2023-10-18`
+  - 💡 Suggestion: `2023-05-18`
+- **2023-W42** → `2023-10-19`
+  - 💡 Suggestion: `2023-07-19`
+- **2023-W42** → `2023-10-20`
+  - 💡 Suggestion: `2026-02-20`
+- **2023-W43** → `2023-10-25`
+  - 💡 Suggestion: `2023-06-25`
+- **2023-W43** → `2023-10-26`
+  - 💡 Suggestion: `2023-01-26`
+- **2023-W43** → `2023-10-27`
+  - 💡 Suggestion: `2023-07-27`
+- **2023-W44** → `2023-10-31`
+  - 💡 Suggestion: `2024-10-21`
+- **2023-W44** → `2023-11-01`
+  - 💡 Suggestion: `2024-11-20`
+- **2023-W44** → `2023-11-02`
+  - 💡 Suggestion: `2023-12-02`
+- **2023-W45** → `2023-11-08`
+  - 💡 Suggestion: `2024-11-20`
+- **2023-W45** → `2023-11-09`
+  - 💡 Suggestion: `2024-11-20`
+- **2023-W46** → `2023-11-15`
+  - 💡 Suggestion: `2023-12-12`
+- **2023-W46** → `2023-11-16`
+  - 💡 Suggestion: `2023-12-12`
+- **2023-W46** → `2023-11-17`
+  - 💡 Suggestion: `2023-12-12`
+- **2023-W48** → `2023-11-28`
+  - 💡 Suggestion: `2023-01-28`
+- **2023-W48** → `2023-11-29`
+  - 💡 Suggestion: `2023-01-29`
+- **2023-W48** → `2023-11-30`
+  - 💡 Suggestion: `2024-11-20`
+- **2023-W48** → `2023-12-01`
+  - 💡 Suggestion: `2023-12-12`
+- **2023-W49** → `2023-12-06`
+  - 💡 Suggestion: `2023-12-03`
+- **2023-W49** → `2023-12-07`
+  - 💡 Suggestion: `2023-12-03`
+- **2023-W49** → `2023-12-08`
+  - 💡 Suggestion: `2023-12-03`
+- **2023-W50** → `2023-12-13`
+  - 💡 Suggestion: `2023-12-12`
+- **2023-W50** → `2023-12-14`
+  - 💡 Suggestion: `2023-12-12`
+- **2023-W50** → `2023-12-15`
+  - 💡 Suggestion: `2023-12-12`
+- **2024-W02** → `2024-01-08`
+  - 💡 Suggestion: `2024-11-20`
+- **2024-W02** → `2024-01-09`
+  - 💡 Suggestion: `2024-01-19`
+- **2024-W02** → `2024-01-10`
+  - 💡 Suggestion: `2024-01-19`
+- **2024-W02** → `2024-01-11`
+  - 💡 Suggestion: `2024-01-19`
+- **2024-W02** → `2024-01-12`
+  - 💡 Suggestion: `2024-01-19`
+- **2024-W04** → `2024-01-24`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W04** → `2024-01-25`
+  - 💡 Suggestion: `2022-01-25`
+- **2024-W04** → `2024-01-26`
+  - 💡 Suggestion: `2023-01-26`
+- **2024-W05** → `2024-01-31`
+  - 💡 Suggestion: `2024-01-19`
+- **2024-W05** → `2024-02-01`
+  - 💡 Suggestion: `2026-02-01`
+- **2024-W05** → `2024-02-02`
+  - 💡 Suggestion: `2026-02-02`
+- **2024-W06** → `2024-02-06`
+  - 💡 Suggestion: `2026-02-06`
+- **2024-W06** → `2024-02-07`
+  - 💡 Suggestion: `2022-02-07`
+- **2024-W06** → `2024-02-08`
+  - 💡 Suggestion: `2026-02-20`
+- **2024-W06** → `2024-02-09`
+  - 💡 Suggestion: `2026-02-09`
+- **2024-W07** → `2024-02-12`
+  - 💡 Suggestion: `2026-02-12`
+- **2024-W07** → `2024-02-14`
+  - 💡 Suggestion: `2026-02-14`
+- **2024-W07** → `2024-02-15`
+  - 💡 Suggestion: `2026-02-15`
+- **2024-W08** → `2024-02-21`
+  - 💡 Suggestion: `2026-02-21`
+- **2024-W08** → `2024-02-22`
+  - 💡 Suggestion: `2026-02-22`
+- **2024-W08** → `2024-02-23`
+  - 💡 Suggestion: `2026-02-22`
+- **2024-W09** → `2024-02-26`
+  - 💡 Suggestion: `2026-02-22`
+- **2024-W09** → `2024-02-27`
+  - 💡 Suggestion: `2026-02-22`
+- **2024-W09** → `2024-02-28`
+  - 💡 Suggestion: `2026-02-22`
+- **2024-W09** → `2024-02-29`
+  - 💡 Suggestion: `2026-02-22`
+- **2024-W10** → `2024-03-04`
+  - 💡 Suggestion: `2026-02-04`
+- **2024-W10** → `2024-03-06`
+  - 💡 Suggestion: `2026-02-06`
+- **2024-W10** → `2024-03-07`
+  - 💡 Suggestion: `2022-02-07`
+- **2024-W10** → `2024-03-08`
+  - 💡 Suggestion: `2022-09-08`
+- **2024-W10** → `2024-03-13`
+  - 💡 Suggestion: `2026-02-13`
+- **2024-W11** → `2024-03-11`
+  - 💡 Suggestion: `2022-03-11`
+- **2024-W13** → `2024-03-27`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W13** → `2024-03-28`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W13** → `2024-03-29`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W14** → `2024-04-01`
+  - 💡 Suggestion: `2022-04-01`
+- **2024-W14** → `2024-04-03`
+  - 💡 Suggestion: `2026-02-03`
+- **2024-W14** → `2024-04-04`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W14** → `2024-04-05`
+  - 💡 Suggestion: `2022-04-05`
+- **2024-W15** → `2024-04-08`
+  - 💡 Suggestion: `2023-09-08`
+- **2024-W15** → `2024-04-10`
+  - 💡 Suggestion: `2026-02-10`
+- **2024-W15** → `2024-04-12`
+  - 💡 Suggestion: `2022-04-12`
+- **2024-W16** → `2024-04-15`
+  - 💡 Suggestion: `2026-02-15`
+- **2024-W17** → `2024-04-22`
+  - 💡 Suggestion: `2026-02-22`
+- **2024-W17** → `2024-04-23`
+  - 💡 Suggestion: `2023-04-23`
+- **2024-W17** → `2024-04-24`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W17** → `2024-04-25`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W17** → `2024-04-26`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W18** → `2024-04-29`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W18** → `2024-04-30`
+  - 💡 Suggestion: `2023-04-23`
+- **2024-W18** → `2024-05-01`
+  - 💡 Suggestion: `2026-02-01`
+- **2024-W18** → `2024-05-02`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W18** → `2024-05-03`
+  - 💡 Suggestion: `2022-05-03`
+- **2024-W20** → `2024-05-14`
+  - 💡 Suggestion: `2026-02-14`
+- **2024-W20** → `2024-05-15`
+  - 💡 Suggestion: `2026-02-15`
+- **2024-W20** → `2024-05-16`
+  - 💡 Suggestion: `2022-05-16`
+- **2024-W20** → `2024-05-17`
+  - 💡 Suggestion: `2023-05-17`
+- **2024-W21** → `2024-05-20`
+  - 💡 Suggestion: `2022-05-20`
+- **2024-W21** → `2024-05-21`
+  - 💡 Suggestion: `2024-10-21`
+- **2024-W21** → `2024-05-22`
+  - 💡 Suggestion: `2026-02-22`
+- **2024-W21** → `2024-05-23`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W21** → `2024-05-24`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W22** → `2024-05-27`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W22** → `2024-05-28`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W22** → `2024-05-29`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W22** → `2024-05-30`
+  - 💡 Suggestion: `2022-06-30`
+- **2024-W22** → `2024-05-31`
+  - 💡 Suggestion: `2023-05-18`
+- **2024-W23** → `2024-06-03`
+  - 💡 Suggestion: `2023-07-03`
+- **2024-W23** → `2024-06-04`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W23** → `2024-06-05`
+  - 💡 Suggestion: `2023-06-25`
+- **2024-W23** → `2024-06-06`
+  - 💡 Suggestion: `2023-06-09`
+- **2024-W23** → `2024-06-07`
+  - 💡 Suggestion: `2023-06-07`
+- **2024-W24** → `2024-06-10`
+  - 💡 Suggestion: `2021-06-10`
+- **2024-W24** → `2024-06-11`
+  - 💡 Suggestion: `2022-06-11`
+- **2024-W24** → `2024-06-12`
+  - 💡 Suggestion: `2021-06-12`
+- **2024-W24** → `2024-06-13`
+  - 💡 Suggestion: `2022-06-13`
+- **2024-W26** → `2024-06-25`
+  - 💡 Suggestion: `2023-06-25`
+- **2024-W26** → `2024-06-27`
+  - 💡 Suggestion: `2022-06-27`
+- **2024-W26** → `2024-06-28`
+  - 💡 Suggestion: `2022-06-28`
+- **2024-W26** → `Athena.drawio.png`
+- **2024-W27** → `2024-07-01`
+  - 💡 Suggestion: `2021-07-01`
+- **2024-W27** → `2024-07-02`
+  - 💡 Suggestion: `2021-07-02`
+- **2024-W28** → `2024-07-08`
+  - 💡 Suggestion: `2021-07-08`
+- **2024-W28** → `2024-07-09`
+  - 💡 Suggestion: `2026-02-09`
+- **2024-W28** → `2024-07-10`
+  - 💡 Suggestion: `2026-02-10`
+- **2024-W28** → `2024-07-11`
+  - 💡 Suggestion: `2026-02-11`
+- **2024-W29** → `2024-07-15`
+  - 💡 Suggestion: `2021-07-15`
+- **2024-W29** → `2024-07-16`
+  - 💡 Suggestion: `2021-07-16`
+- **2024-W29** → `2024-07-17`
+  - 💡 Suggestion: `2021-07-17`
+- **2024-W29** → `2024-07-18`
+  - 💡 Suggestion: `2021-07-18`
+- **2024-W29** → `2024-07-19`
+  - 💡 Suggestion: `2024-01-19`
+- **2024-W30** → `2024-07-22`
+  - 💡 Suggestion: `2021-07-22`
+- **2024-W30** → `2024-07-23`
+  - 💡 Suggestion: `2021-07-23`
+- **2024-W30** → `2024-07-24`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W30** → `2024-07-25`
+  - 💡 Suggestion: `2022-07-25`
+- **2024-W31** → `2024-07-29`
+  - 💡 Suggestion: `2021-07-29`
+- **2024-W31** → `2024-07-30`
+  - 💡 Suggestion: `2023-07-03`
+- **2024-W31** → `2024-07-31`
+  - 💡 Suggestion: `2023-07-19`
+- **2024-W31** → `2024-08-01`
+  - 💡 Suggestion: `2026-02-01`
+- **2024-W31** → `helm_chart_overrides.yaml`
+  - 💡 Suggestion: `helm chart overrides`
+- **2024-W32** → `2024-08-05`
+  - 💡 Suggestion: `2021-08-05`
+- **2024-W32** → `2024-08-07`
+  - 💡 Suggestion: `2023-06-07`
+- **2024-W32** → `2024-08-08`
+  - 💡 Suggestion: `2021-08-30`
+- **2024-W32** → `2024-08-09`
+  - 💡 Suggestion: `2026-02-09`
+- **2024-W33** → `2024-08-12`
+  - 💡 Suggestion: `2021-08-12`
+- **2024-W33** → `2024-08-13`
+  - 💡 Suggestion: `2021-08-13`
+- **2024-W34** → `2024-08-21`
+  - 💡 Suggestion: `2024-10-21`
+- **2024-W34** → `2024-08-22`
+  - 💡 Suggestion: `2026-02-22`
+- **2024-W34** → `2024-08-23`
+  - 💡 Suggestion: `2021-08-23`
+- **2024-W35** → `2024-08-26`
+  - 💡 Suggestion: `2021-08-26`
+- **2024-W35** → `2024-08-27`
+  - 💡 Suggestion: `2021-08-27`
+- **2024-W35** → `2024-08-28`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W35** → `2024-08-29`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W36** → `2024-09-03`
+  - 💡 Suggestion: `2021-09-03`
+- **2024-W36** → `2024-09-04`
+  - 💡 Suggestion: `2026-02-04`
+- **2024-W36** → `2024-09-05`
+  - 💡 Suggestion: `2026-02-05`
+- **2024-W37** → `2024-09-09`
+  - 💡 Suggestion: `2021-09-09`
+- **2024-W38** → `2024-09-16`
+  - 💡 Suggestion: `2026-02-16`
+- **2024-W38** → `2024-09-17`
+  - 💡 Suggestion: `2026-02-17`
+- **2024-W38** → `2024-09-18`
+  - 💡 Suggestion: `2026-02-18`
+- **2024-W39** → `2024-09-23`
+  - 💡 Suggestion: `2021-09-23`
+- **2024-W39** → `2024-09-25`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W39** → `2024-09-26`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W40** → `2024-09-30`
+  - 💡 Suggestion: `2021-09-30`
+- **2024-W40** → `2024-10-02`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W40** → `2024-10-04`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W41** → `2024-10-07`
+  - 💡 Suggestion: `2024-11-20`
+- **2024-W41** → `2024-10-10`
+  - 💡 Suggestion: `2024-10-21`
+- **2024-W41** → `2024-10-11`
+  - 💡 Suggestion: `2024-10-21`
+- **2024-W42** → `2024-10-14`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W42** → `2024-10-15`
+  - 💡 Suggestion: `2024-10-21`
+- **2024-W42** → `2024-10-16`
+  - 💡 Suggestion: `2024-10-21`
+- **2024-W42** → `2024-10-17`
+  - 💡 Suggestion: `2024-10-21`
+- **2024-W42** → `2024-10-18`
+  - 💡 Suggestion: `2024-10-21`
+- **2024-W43** → `2024-10-22`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W43** → `2024-10-23`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W43** → `2024-10-25`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W44** → `2024-10-28`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W44** → `2024-10-29`
+  - 💡 Suggestion: `2024-10-24`
+- **2024-W44** → `2024-10-30`
+  - 💡 Suggestion: `2024-11-20`
+- **2024-W45** → `2024-11-08`
+  - 💡 Suggestion: `2024-11-20`
+- **2024-W46** → `2024-11-11`
+  - 💡 Suggestion: `2024-11-20`
+- **2024-W47** → `2024-11-18`
+  - 💡 Suggestion: `2024-11-20`
+- **2024-W47** → `2024-11-19`
+  - 💡 Suggestion: `2024-01-19`
+- **2024-W49** → `2024-12-02`
+  - 💡 Suggestion: `2023-12-02`
+- **2024-W49** → `2024-12-03`
+  - 💡 Suggestion: `2023-12-03`
+- **2024-W49** → `2024-12-04`
+  - 💡 Suggestion: `2026-02-04`
+- **2024-W49** → `2024-12-05`
+  - 💡 Suggestion: `2026-02-05`
+- **2024-W50** → `2024-12-09`
+  - 💡 Suggestion: `2026-02-09`
+- **2024-W50** → `2024-12-10`
+  - 💡 Suggestion: `2026-02-10`
+- **2024-W51** → `2024-12-16`
+  - 💡 Suggestion: `2021-12-16`
+- **2025-W02** → `2025-01-06`
+  - 💡 Suggestion: `2026-02-06`
+- **2025-W02** → `2025-01-07`
+  - 💡 Suggestion: `2022-01-07`
+- **2025-W02** → `2025-01-09`
+  - 💡 Suggestion: `2026-02-09`
+- **2025-W02** → `2025-01-10`
+  - 💡 Suggestion: `2022-01-10`
+- **2025-W07** → `2025-02-10`
+  - 💡 Suggestion: `2026-02-10`
+- **2025-W07** → `2025-02-12`
+  - 💡 Suggestion: `2026-02-12`
+- **2025-W07** → `2025-02-13`
+  - 💡 Suggestion: `2026-02-13`
+- **2025-W07** → `2025-02-14`
+  - 💡 Suggestion: `2026-02-14`
+- **2025-W08** → `2025-02-18`
+  - 💡 Suggestion: `2026-02-18`
+- **2025-W09** → `2025-02-24`
+  - 💡 Suggestion: `2026-02-22`
+- **2025-W09** → `2025-02-25`
+  - 💡 Suggestion: `2026-02-22`
+- **2025-W13** → `2025-03-26`
+  - 💡 Suggestion: `2023-01-26`
+- **2025-W14** → `2025-03-31`
+  - 💡 Suggestion: `2022-03-21`
+- **2025-W14** → `2025-04-01`
+  - 💡 Suggestion: `2022-04-01`
+- **2025-W14** → `2025-04-02`
+  - 💡 Suggestion: `2022-04-02`
+- **2025-W14** → `2025-04-03`
+  - 💡 Suggestion: `2026-02-03`
+- **2025-W14** → `2025-04-04`
+  - 💡 Suggestion: `2022-04-14`
+- **2025-W16** → `2025-04-14`
+  - 💡 Suggestion: `2022-04-14`
+- **2025-W16** → `2025-04-15`
+  - 💡 Suggestion: `2026-02-15`
+- **2025-W16** → `2025-04-16`
+  - 💡 Suggestion: `2026-02-16`
+- **2025-W17** → `2025-04-21`
+  - 💡 Suggestion: `2026-02-21`
+- **8.5.3 Upgrade (now 8.6.0)** → `2023-01-09`
+  - 💡 Suggestion: `2023-06-09`
+- **8.5.3 Upgrade (now 8.6.0)** → `2023-01-11`
+  - 💡 Suggestion: `2023-12-11`
+- **8.5.3 Upgrade (now 8.6.0)** → `2023-01-12`
+  - 💡 Suggestion: `2023-12-12`
+- **8.5.3 Upgrade (now 8.6.0)** → `2023-01-24`
+  - 💡 Suggestion: `2023-01-29`
+- **ACE** → `Net 60`
+- **ACE** → `Prepaid Shipping`
+  - 💡 Suggestion: `Prepaid`
+- **Ad Types** → `CJA`
+- **Ad Types** → `COMP`
+- **Ad Types** → `EXP`
+- **Ad Types** → `FAQ`
+- **Ad Types** → `GSA`
+  - 💡 Suggestion: `SAP`
+- **Ad Types** → `LTA`
+  - 💡 Suggestion: `ETA`
+- **Ad Types** → `MOTS`
+- **Ad Types** → `OSA`
+  - 💡 Suggestion: `SAP`
+- **Ad Types** → `SUA`
+  - 💡 Suggestion: `SAP`
+- **Ad Types** → `TPA`
+  - 💡 Suggestion: `IPA`
+- **Admin** → `Bret Wortman`
+- **Admin** → `Danielle Rienas`
+- **B2B Sales Funnel** → `B2B`
+- **Bayer AG Notes** → `2024-12-04`
+  - 💡 Suggestion: `2026-02-04`
+- **Bayer AG Notes** → `2024-12-16`
+  - 💡 Suggestion: `2021-12-16`
+- **Bayer AG Notes** → `2024-12-18`
+  - 💡 Suggestion: `2026-02-18`
+- **Bayer AG Notes** → `2024-12-19`
+  - 💡 Suggestion: `2024-01-19`
+- **Benefits** → `PTO`
+- **Benefits** → `Sabbatical`
+- **Benefits** → `Sick time`
+- **Benefits** → `Vacation`
+- **Benefits** → `hr`
+- **Bill Houck** → `SBA`
+  - 💡 Suggestion: `SAP`
+- **Chile Peppers** → `Bottom pruning`
+- **Chile Peppers** → `CalMag`
+- **Chile Peppers** → `Fertilizer`
+- **Chile Peppers** → `Fish Emulsion`
+- **Chile Peppers** → `Green Lacewings`
+- **Chile Peppers** → `Hardening off`
+  - 💡 Suggestion: `Gardening`
+- **Chile Peppers** → `Ladybugs`
+- **Chile Peppers** → `Mag Sulfate`
+- **Chile Peppers** → `Praying Mantis`
+  - 💡 Suggestion: `Packing List`
+- **Chile Peppers** → `Topping`
+- **Chile Peppers** → `Treatments to apply when potting up`
+- **Chile Peppers** → `When to pot up`
+- **Christina Shadowing Observations** → `2024-09-04`
+  - 💡 Suggestion: `2026-02-04`
+- **Christina Shadowing Observations** → `2024-09-05`
+  - 💡 Suggestion: `2026-02-05`
+- **Clearance 2023** → `2023-02-06`
+  - 💡 Suggestion: `2026-02-06`
+- **Configure_a_Security_Context_for_a_Pod_or_Container_|_Kubernetes** → `https://git.k8s.io/design-proposals-archive/auth/no-new-privs`
+- **Configure_a_Security_Context_for_a_Pod_or_Container_|_Kubernetes** → `https://git.k8s.io/design-proposals-archive/auth/security_context`
+- **Configure_a_Security_Context_for_a_Pod_or_Container_|_Kubernetes** → `https://git.k8s.io/design-proposals-archive/storage/volume-ownership-management`
+- **Configure_a_Security_Context_for_a_Pod_or_Container_|_Kubernetes** → `https://github.com/container-storage-interface/spec/blob/master/spec`
+- **Configure_a_Security_Context_for_a_Pod_or_Container_|_Kubernetes** → `https://github.com/containerd/containerd/blob/main/docs/cri/config`
+- **Current Inc.** → `Collect Shipping`
+- **D&D Notes** → `2025-05-10`
+  - 💡 Suggestion: `2026-02-10`
+- **Departments** → `Customer Care`
+  - 💡 Suggestion: `Customer Notes`
+- **Departments** → `Product Development`
+  - 💡 Suggestion: `IPA Deployment`
+- **ECE LB & Cert Setup** → `Screenshot 2023-06-29 at 6.25.29 AM.png`
+- **ECE guide** → `Screenshot 2023-06-30 at 7.01.00 AM.png`
+- **ECE guide** → `Screenshot 2023-06-30 at 7.04.38 AM.png`
+- **ECRM 2024** → `2024-09-24`
+  - 💡 Suggestion: `2024-10-24`
+- **ECRM 2024** → `2024-09-25`
+  - 💡 Suggestion: `2024-10-24`
+- **ECRM 2024** → `2024-09-26`
+  - 💡 Suggestion: `2024-10-24`
+- **ECRM 2024** → `2024-10-04`
+  - 💡 Suggestion: `2024-10-24`
+- **Elasticsearch Recruitment** → `Charlie White`
+- **Essentialism** → `Greg McKeown`
+- **Farmhouse breakfast bowls** → `The Waltwins`
+- **Finance** → `Mike Tracy`
+  - 💡 Suggestion: `Mike Simacek`
+- **Finance** → `Rene Frost`
+- **Firefly Buys** → `Net 30`
+- **Firefly Buys** → `Prepaid Shipping`
+  - 💡 Suggestion: `Prepaid`
+- **GenAI Workshop** → `Screenshot 2024-08-09 at 8.24.53 AM.png`
+- **Goals** → `BLOC`
+- **Goals** → `drop-shipping`
+- **Goals** → `sales plan`
+  - 💡 Suggestion: `Sales Reps`
+- **HR** → `Human Resources Manager`
+- **Home K8s Clusters** → `Screenshot 2024-02-20 at 9.02.24 AM.png`
+- **Hours Aug 19-Aug 23** → `2024-08-19`
+  - 💡 Suggestion: `2024-01-19`
+- **Hours Aug 19-Aug 23** → `2024-08-20`
+  - 💡 Suggestion: `2021-08-20`
+- **Hours Aug 19-Aug 23** → `2024-08-21`
+  - 💡 Suggestion: `2024-10-21`
+- **Hours Aug 19-Aug 23** → `2024-08-22`
+  - 💡 Suggestion: `2026-02-22`
+- **Hours Aug 19-Aug 23** → `2024-08-23`
+  - 💡 Suggestion: `2021-08-23`
+- **How Warren Buffet hires people** → `Effortless`
+- **How Warren Buffet hires people** → `Greg McKeown`
+- **How to track freezer temps** → `https://www.raspberrypi.org/documentation/remote-access/ip-address`
+- **Insert Card** → `Screenshot 2023-04-29 at 7.24.56 AM.png`
+- **Kessel Run** → `2025-04-25`
+  - 💡 Suggestion: `2023-06-25`
+- **LMCO** → `Juice`
+- **Lindsay Moore** → `Sales/Distributors`
+- **Lindsay Moore** → `Sales/HSN`
+  - 💡 Suggestion: `Sales`
+- **Lindsay Moore** → `Sales/Hobby Lobby`
+- **Lindsay Moore** → `Sales/Joann`
+  - 💡 Suggestion: `Sales`
+- **Lindsay Moore** → `Sales/Michaels`
+  - 💡 Suggestion: `Sales Pitch`
+- **Lindsay Moore** → `Sales/Notions Marketing`
+- **Lindsay Moore** → `Sales/Office Depot`
+- **Lindsay Moore** → `Sales/Paper Source`
+- **Lindsay Moore** → `Sales/QVC`
+  - 💡 Suggestion: `Sales`
+- **Marketing** → `Marketing Director`
+  - 💡 Suggestion: `Marketing Ideas`
+- **Marketing** → `Social Marketing Team`
+  - 💡 Suggestion: `Marketing Ideas`
+- **Marketing Ideas** → `Small initial purchases`
+- **Mike Montalvo** → `Sales/Walmart`
+- **Mike Simacek** → `Sales/Brenda Conroy`
+  - 💡 Suggestion: `Call with Brenda Conroy`
+- **Mike Simacek** → `Sales/Sam's Club`
+- **Operations** → `Shipping`
+  - 💡 Suggestion: `Shipping Terms`
+- **Operations** → `Warehousing`
+  - 💡 Suggestion: `Marketing`
+- **PO0006 Transfers** → `NWFCU`
+- **PO0006 Transfers** → `UVACCU`
+- **Phone call with Victor 2023-07-26** → `2023-07-26`
+  - 💡 Suggestion: `2023-07-27`
+- **QBO & QBC Migration** → `Mike Tracy`
+  - 💡 Suggestion: `Mike Simacek`
+- **Reach Brands Supply Chain calls** → `2023-06-14`
+  - 💡 Suggestion: `2022-06-14`
+- **Reach Brands Supply Chain calls** → `2023-06-21`
+  - 💡 Suggestion: `2023-06-25`
+- **Recipes** → `Bret's Buttkicking Beans`
+- **Recipes** → `Notes/Archived/Coffee`
+- **Sales** → `Sales Manager`
+  - 💡 Suggestion: `Sales Funnel`
+- **Sales Order Automation** → `QBC`
+- **Sales Order Automation** → `automation`
+  - 💡 Suggestion: `Sales Order Automation`
+- **Sales Ritual** → `sales`
+  - 💡 Suggestion: `Sales`
+- **Scaling Your Business** → `Free-to-Focus-Freedom-Compass-copy-495x640.jpg`
+- **Shipping Terms** → `Collect Shipping`
+- **Shipping Terms** → `Prepaid Shipping`
+  - 💡 Suggestion: `Prepaid`
+- **SpecialMade Goods & Services** → `Paul Delmerico`
+- **Steve Fegen** → `Sales/AC Moore`
+- **Steve Fegen** → `Sales/Dick Blick`
+- **Steve Fegen** → `Sales/Hobby Lobby`
+- **Steve Fegen** → `Sales/Home Depot`
+  - 💡 Suggestion: `Sales Reps`
+- **Steve Fegen** → `Sales/Joann`
+  - 💡 Suggestion: `Sales`
+- **Steve Fegen** → `Sales/Lowes`
+  - 💡 Suggestion: `Sales Reps`
+- **Steve Fegen** → `Sales/Menards`
+  - 💡 Suggestion: `Sales Reps`
+- **Steve Fegen** → `Sales/Michaels`
+  - 💡 Suggestion: `Sales Pitch`
+- **Strategic Coach 2022-08-17** → `2022-08-17`
+  - 💡 Suggestion: `2022-06-17`
+- **Target DVS** → `Collect Shipping`
+- **Target DVS** → `Net 60`
+- **Target DVS** → `Screenshot 2024-09-09 at 6.28.24 PM.png`
+- **Target DVS** → `Screenshot 2024-09-09 at 6.28.33 PM.png`
+- **Terms** → `Net 30`
+- **Terms** → `Net 60`
+- **The Container Store** → `Net 60`
+- **The Container Store** → `Prepaid Shipping`
+  - 💡 Suggestion: `Prepaid`
+- **The Grommet** → `Net 60`
+- **The Grommet** → `Prepaid Shipping`
+  - 💡 Suggestion: `Prepaid`
+- **USACE Zoom 2023-07-12** → `Screenshot 2023-07-13 at 11.30.34 AM.png`
+- **Zulily** → `Collect Shipping`
+- **Zulily** → `Net 60`
+- **helm chart overrides** → `helm_chart_overrides.yaml`
+  - 💡 Suggestion: `helm chart overrides`
+- **kubectl_Cheat_Sheet_|_Kubernetes** → `https://github.com/kubernetes/community/blob/master/contributors/devel/sig-instrumentation/logging`
+- **rituals** → `Evening`
+  - 💡 Suggestion: `Gardening`
+- **rituals** → `Morning`
+  - 💡 Suggestion: `Souring`
+- **rituals** → `Workday shutdown`
+- **rituals** → `Workday startup`
+- **zalando-postgres-operator-Postgres_operator_creates_and_manages_PostgreSQL_clusters_running_in_Kubernetes** → `https://github.com/zalando/postgres-operator/blob/master/docs/administrator`
+- **zalando-postgres-operator-Postgres_operator_creates_and_manages_PostgreSQL_clusters_running_in_Kubernetes** → `https://github.com/zalando/postgres-operator/blob/master/docs/developer`
+- **zalando-postgres-operator-Postgres_operator_creates_and_manages_PostgreSQL_clusters_running_in_Kubernetes** → `https://github.com/zalando/postgres-operator/blob/master/docs/index`
+- **zalando-postgres-operator-Postgres_operator_creates_and_manages_PostgreSQL_clusters_running_in_Kubernetes** → `https://github.com/zalando/postgres-operator/blob/master/docs/operator-ui`
+- **zalando-postgres-operator-Postgres_operator_creates_and_manages_PostgreSQL_clusters_running_in_Kubernetes** → `https://github.com/zalando/postgres-operator/blob/master/docs/quickstart`
+- **zalando-postgres-operator-Postgres_operator_creates_and_manages_PostgreSQL_clusters_running_in_Kubernetes** → `https://github.com/zalando/postgres-operator/blob/master/docs/reference/cluster_manifest`
+- **zalando-postgres-operator-Postgres_operator_creates_and_manages_PostgreSQL_clusters_running_in_Kubernetes** → `https://github.com/zalando/postgres-operator/blob/master/docs/reference/command_line_and_environment`
+- **zalando-postgres-operator-Postgres_operator_creates_and_manages_PostgreSQL_clusters_running_in_Kubernetes** → `https://github.com/zalando/postgres-operator/blob/master/docs/reference/operator_parameters`
+- **zalando-postgres-operator-Postgres_operator_creates_and_manages_PostgreSQL_clusters_running_in_Kubernetes** → `https://github.com/zalando/postgres-operator/blob/master/docs/user`
+
+## 🏷️ Tag Analysis
+
+### Popular Tags (5+ uses)
+
+- #elastic (7 files)
+- #salesrep (5 files)
+- #people (10 files)
+- #Recipe (20 files)
+- #bbq (5 files)
+- #marketing (10 files)
+- #daily (161 files)
+- #project (6 files)
+- #heading (15 files)
+- #weekly (121 files)
+
+### Similar Tags (Potential Duplicates)
+
+- #reason-3-you-need-to-reenable-shard-allocation ≈ #reason-3-you-need-to-re-enable-shard-allocation (98.9%)
+- #quick-start ≈ #quickstart (95.2%)
+- #securitycontext-v1-core ≈ #podsecuritycontext-v1-core (93.9%)
+- #service-tabs-0 ≈ #service-tabs-1 (92.9%)
+- #service-tabs-0 ≈ #service-tabs-2 (92.9%)
+- #service-tabs-0 ≈ #service-tabs-3 (92.9%)
+- #service-tabs-0 ≈ #service-tabs-4 (92.9%)
+- #service-tabs-0 ≈ #service-tabs-5 (92.9%)
+- #service-tabs-0 ≈ #service-tabs-6 (92.9%)
+- #service-tabs-0 ≈ #service-tabs-7 (92.9%)
+- #service-tabs-0 ≈ #service-tabs-8 (92.9%)
+- #service-tabs-0 ≈ #service-tabs-9 (92.9%)
+- #service-tabs-1 ≈ #service-tabs-2 (92.9%)
+- #service-tabs-1 ≈ #service-tabs-3 (92.9%)
+- #service-tabs-1 ≈ #service-tabs-4 (92.9%)
+- #service-tabs-1 ≈ #service-tabs-5 (92.9%)
+- #service-tabs-1 ≈ #service-tabs-6 (92.9%)
+- #service-tabs-1 ≈ #service-tabs-7 (92.9%)
+- #service-tabs-1 ≈ #service-tabs-8 (92.9%)
+- #service-tabs-1 ≈ #service-tabs-9 (92.9%)
+- #service-tabs-2 ≈ #service-tabs-3 (92.9%)
+- #service-tabs-2 ≈ #service-tabs-4 (92.9%)
+- #service-tabs-2 ≈ #service-tabs-5 (92.9%)
+- #service-tabs-2 ≈ #service-tabs-6 (92.9%)
+- #service-tabs-2 ≈ #service-tabs-7 (92.9%)
+- #service-tabs-2 ≈ #service-tabs-8 (92.9%)
+- #service-tabs-2 ≈ #service-tabs-9 (92.9%)
+- #service-tabs-3 ≈ #service-tabs-4 (92.9%)
+- #service-tabs-3 ≈ #service-tabs-5 (92.9%)
+- #service-tabs-3 ≈ #service-tabs-6 (92.9%)
+- #service-tabs-3 ≈ #service-tabs-7 (92.9%)
+- #service-tabs-3 ≈ #service-tabs-8 (92.9%)
+- #service-tabs-3 ≈ #service-tabs-9 (92.9%)
+- #service-tabs-4 ≈ #service-tabs-5 (92.9%)
+- #service-tabs-4 ≈ #service-tabs-6 (92.9%)
+- #service-tabs-4 ≈ #service-tabs-7 (92.9%)
+- #service-tabs-4 ≈ #service-tabs-8 (92.9%)
+- #service-tabs-4 ≈ #service-tabs-9 (92.9%)
+- #service-tabs-5 ≈ #service-tabs-6 (92.9%)
+- #service-tabs-5 ≈ #service-tabs-7 (92.9%)
+- #service-tabs-5 ≈ #service-tabs-8 (92.9%)
+- #service-tabs-5 ≈ #service-tabs-9 (92.9%)
+- #service-tabs-6 ≈ #service-tabs-7 (92.9%)
+- #service-tabs-6 ≈ #service-tabs-8 (92.9%)
+- #service-tabs-6 ≈ #service-tabs-9 (92.9%)
+- #service-tabs-7 ≈ #service-tabs-8 (92.9%)
+- #service-tabs-7 ≈ #service-tabs-9 (92.9%)
+- #service-tabs-8 ≈ #service-tabs-9 (92.9%)
+- #file-recorderdb-pv-yaml ≈ #file-recorderdb-db-yaml (91.3%)
+- #with-selectors ≈ #without-selectors (90.3%)
+- #2021-06-23 ≈ #2021-06-21 (90.0%)
+- #2021-06-23 ≈ #2021-06-29 (90.0%)
+- #2021-06-23 ≈ #2021-06-24 (90.0%)
+- #2021-06-21 ≈ #2021-06-29 (90.0%)
+- #2021-06-21 ≈ #2021-06-24 (90.0%)
+- #2021-06-21 ≈ #2021-06-14 (90.0%)
+- #2021-06-21 ≈ #2021-06-18 (90.0%)
+- #2021-06-21 ≈ #2021-06-17 (90.0%)
+- #2021-06-29 ≈ #2021-06-24 (90.0%)
+- #2021-06-24 ≈ #2021-06-14 (90.0%)
+- #2021-06-14 ≈ #2021-06-18 (90.0%)
+- #2021-06-14 ≈ #2021-06-17 (90.0%)
+- #2021-06-18 ≈ #2021-06-17 (90.0%)
+- #goals ≈ #goal (88.9%)
+- #updating-resources ≈ #patching-resources (88.9%)
+- #use-a-strategic-merge-patch-to-update-a-deployment ≈ #use-a-json-merge-patch-to-update-a-deployment (88.4%)
+- #set-the-security-context-for-a-pod ≈ #set-the-security-context-for-a-container (86.5%)
+- #project ≈ #Project (85.7%)
+- #updating-resources ≈ #editing-resources (85.7%)
+- #editing-resources ≈ #deleting-resources (85.7%)
+- #bridge_cafile ≈ #bridge_certfile (85.7%)
+- #can-you-use-terraform-onpremise ≈ #how-to-use-terraform-onpremise (85.2%)
+- #file-homeassistant-yaml ≈ #file-homeassistant-ingress-yaml (85.2%)
+- #file-homeassistant-yaml ≈ #file-homeassistant-service-yaml (85.2%)
+- #file-recorderdb-pv-yaml ≈ #file-recorder-yml (85.0%)
+- #file-recorderdb-db-yaml ≈ #file-recorder-yml (85.0%)
+- #13c/Transcode ≈ #230/Transcode (84.6%)
+- #file-homeassistant-ingress-yaml ≈ #file-homeassistant-service-yaml (83.9%)
+- #updating-resources ≈ #deleting-resources (83.3%)
+- #bridge_certfile ≈ #bridge_keyfile (82.8%)
+- #synchronising-with-clients-after-migration ≈ #synchronising-with-clients-after-data-recovery (81.8%)
+- #bridge_cafile ≈ #bridge_keyfile (81.5%)
+- #max_packet_size ≈ #bridge_max_packet_size (81.1%)
+- #file-homeassistant-yaml ≈ #file-homeassistant-deployment-yaml (80.7%)
